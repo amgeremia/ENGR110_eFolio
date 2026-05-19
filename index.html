@@ -242,7 +242,7 @@
       <div class="hub-item" onclick="show('design')"><span class="hub-num">03</span><span class="hub-title">Design</span><span class="hub-sub">In progress</span></div>
       <div class="hub-item" onclick="show('deliverables')"><span class="hub-num">04</span><span class="hub-title">Deliverables</span><span class="hub-sub">Wk 2&ndash;4</span></div>
       <div class="hub-item" onclick="show('timeline')"><span class="hub-num">05</span><span class="hub-title">Timeline</span><span class="hub-sub">36 tasks</span></div>
-      <div class="hub-item" onclick="show('updates')"><span class="hub-num">06</span><span class="hub-title">Updates</span><span class="hub-sub">Wk 2&ndash;4</span></div>
+      <div class="hub-item" onclick="show('updates')"><span class="hub-num">06</span><span class="hub-title">Updates</span><span class="hub-sub">Wk 2&ndash;5</span></div>
       <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
     </div>
 
@@ -377,6 +377,11 @@
     <!-- UPDATES -->
     <div class="page" id="updates">
       <h1>Current Updates</h1>
+      <div class="update-item" onclick="show('week5')">
+        <div class="update-week">Week 5</div>
+        <div class="update-title">Progress Report</div>
+        <div class="update-sub">CAD model finalized, CP feedback on cost, eFolio migrated to Vercel via Git.</div>
+      </div>
       <div class="update-item" onclick="show('week4')">
         <div class="update-week">Week 4</div>
         <div class="update-title">Progress Report</div>
@@ -392,6 +397,26 @@
         <div class="update-title">Progress Report</div>
         <div class="update-sub">Background research, empathy work, CP interview preparation.</div>
       </div>
+      <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
+    </div>
+
+    <!-- WEEK 5 -->
+    <div class="page" id="week5">
+      <h1>Week 5 &mdash; Progress Report</h1>
+      <div class="report-meta">Last updated: May 19, 2026</div>
+      <p>This week concentrated on advancing the physical enclosure design to a complete CAD model, integrating feedback from our community partner on cost and manufacturability, and modernizing the eFolio workflow to support continuous deployment.</p>
+      <h2>What I Did</h2>
+      <p>I finalized the CAD model for the Christmas ornament enclosure. The design consists of two threaded halves &mdash; top and bottom &mdash; that screw together, with a dedicated PCB seat inside for proper board registration. Key details: 3.15&Prime; outer diameter, PETG material for the print run, a sealed wire exit through the hook top secured with epoxy, and a polishing process to increase shell transparency. Tolerances on the PCB seat were set to match board dimensions with appropriate clearance. I also monitored team progress throughout the week, captured decisions from team meetings, and followed up on open action items to keep the project moving.</p>
+      <figure style="margin: 24px 0;">
+        <img src="images/Screenshot 2026-05-19 at 10.46.24 AM.png" alt="CAD model of the ornament enclosure showing threaded halves and PCB seat" style="width: 100%; max-width: 640px; border: 1px solid var(--lt); display: block;">
+        <figcaption style="font-family: var(--mono); font-size: 0.62em; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dim); margin-top: 8px;">CAD model &mdash; threaded ornament halves with PCB seat, 3.15&Prime; O.D., PETG</figcaption>
+      </figure>
+      <h2>Team Effort</h2>
+      <p>Danish and I scheduled and led a meeting with our community partner, John, to present the current enclosure design and receive structured feedback. The conversation focused on design cost, manufacturability, and how to properly justify each feature decision rather than building on assumptions. We have been coordinating closely on PCB&ndash;enclosure integration to make sure the mechanical and electrical designs develop in sync rather than converging at the last minute. Meetings were documented and key decisions were captured so the full team stayed aligned even when not in the room.</p>
+      <h2>eFolio Changes Made</h2>
+      <p>Migrated the eFolio from a static host to a Git repository connected to Vercel for continuous deployment. Changes pushed to the repo now go live automatically &mdash; no manual upload step. Combined with Claude CLI, this makes iterative content updates and design changes significantly faster. The workflow change itself is the infrastructure improvement this week; the Week 5 report is the first entry published through the new pipeline.</p>
+      <h2>Challenges &amp; Next Steps</h2>
+      <p>The most significant challenge, raised directly by John during our partner meeting, is cost. The current three-piece design &mdash; two threaded ornament halves plus a PCB seat &mdash; carries too much per-unit manufacturing cost to scale. I am refining the approach: rather than a fully custom printable enclosure, the goal is to identify an existing off-the-shelf ornament shell and design only the closure mechanism and weather seal as a manufacturable part. This reduces unique-part count, lowers cost, and keeps the mechanical scope realistic. Next step: source candidate stock enclosures and prototype the closure attachment before the next CP check-in.</p>
       <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
     </div>
 
@@ -532,6 +557,7 @@ var BC = {
   updates:{p:[['Home','home']]},
   week2:{p:[['Home','home'],['Updates','updates']]},
   week3:{p:[['Home','home'],['Updates','updates']]},
+  week5:{p:[['Home','home'],['Updates','updates']]},
   week4:{p:[['Home','home'],['Updates','updates']]},
   contract:{p:[['Home','home']]},
   partner:{p:[['Home','home']]},
