@@ -301,6 +301,34 @@
 
       <h2>Decision Matrix Summary</h2>
       <p>Evaluated MCU, wireless protocol, enclosure form factor, and student interface against reliability, usability, implementation risk, and MicroBlocks compatibility. ESP32-C3 won on BLE 5.0, native USB, and confirmed firmware. QR-to-BLE over RFID: lower cost, zero added infrastructure. Snap-fit two-piece over single-shell: serviceability and PCB access.</p>
+
+      <h2>Enclosure Iteration</h2>
+
+      <p style="font-family:var(--mono);font-size:0.68em;letter-spacing:0.1em;text-transform:uppercase;margin-top:24px;margin-bottom:8px;color:var(--ink);">Initial Prototype</p>
+      <p>The first enclosure design used two threaded hemispheres printed in translucent PETG &mdash; a three-piece assembly consisting of a top dome, a PCB seat ring, and a bottom dome. Wire entry was routed through the peak via a grommet. The translucent PETG was intended to serve as a built-in diffuser, softening the NeoPixel output across the shell surface.</p>
+      <div class="img-wrap">
+        <img src="images/ENCLOSURE_V1_render.png" class="lightbox-thumb" onclick="openLB(this.src)" alt="Initial prototype &mdash; threaded hemisphere design" style="width:100%;max-width:640px;display:block;">
+        <div class="img-caption">Initial prototype &mdash; threaded hemisphere design.</div>
+      </div>
+
+      <p style="font-family:var(--mono);font-size:0.68em;letter-spacing:0.1em;text-transform:uppercase;margin-top:32px;margin-bottom:8px;color:var(--ink);">Feedback &amp; Pivot</p>
+      <p>Three problems drove the redesign. First, three unique printed parts per unit was material-heavy and slowed production at scale. Second, the translucent PETG diffusivity was counterproductive to the visual display goal &mdash; even with post-processing to increase transparency, shell scatter reduced perceived brightness and color saturation rather than enhancing the display. Third, a threaded seal is not watertight: capillary action pulls water along the helical gaps regardless of how tightly the halves are torqued. The solution direction: minimize unique part count, use hybrid materials to separate the optical and structural roles, and replace the threaded joint with an o-ring closure.</p>
+
+      <p style="font-family:var(--mono);font-size:0.68em;letter-spacing:0.1em;text-transform:uppercase;margin-top:32px;margin-bottom:8px;color:var(--ink);">Finalized Design</p>
+      <p>The finalized enclosure pairs a single custom-printed part with an injection-molded commercial hemisphere. Six M2 screws compress an o-ring seated between the two halves. The printed part features a square groove sized for a 1&frasl;16&Prime; o-ring, achieving approximately 30% compression with a 0.05&thinsp;mm vertical clearance at full clamp; the joint is additionally sealed with epoxy. This reduces unique printed parts to one per enclosure, uses the injection-molded hemisphere for the optical surface where surface quality is controlled, and achieves a reliable watertight seal via o-ring compression rather than thread geometry.</p>
+      <div class="img-wrap">
+        <img src="images/ENCLOSURE_V2_groove.png" class="lightbox-thumb" onclick="openLB(this.src)" alt="Square groove cross-section &mdash; o-ring seat detail" style="width:100%;max-width:640px;display:block;">
+        <div class="img-caption">Square groove cross-section &mdash; o-ring seat detail.</div>
+      </div>
+      <div class="img-wrap">
+        <img src="images/ENCLUSURE_V2_drawing.png" class="lightbox-thumb" onclick="openLB(this.src)" alt="Final enclosure drawing &mdash; single printed part, 2 per enclosure" style="width:100%;max-width:640px;display:block;">
+        <div class="img-caption">Final enclosure drawing &mdash; single printed part, 2 per enclosure.</div>
+      </div>
+      <div class="img-wrap">
+        <img src="images/ENCLUSURE_V2_render.png" class="lightbox-thumb" onclick="openLB(this.src)" alt="Finalized enclosure assembly render" style="width:100%;max-width:640px;display:block;">
+        <div class="img-caption">Finalized enclosure assembly render.</div>
+      </div>
+
       <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
     </div>
 
@@ -377,6 +405,11 @@
     <!-- UPDATES -->
     <div class="page" id="updates">
       <h1>Current Updates</h1>
+      <div class="update-item" onclick="show('enclosure-report')">
+        <div class="update-week">[Date]</div>
+        <div class="update-title">Enclosure Design &mdash; Iteration &amp; Finalization</div>
+        <div class="update-sub">V1 feedback analysis, pivot to hybrid design, watertight o-ring closure.</div>
+      </div>
       <div class="update-item" onclick="show('week5')">
         <div class="update-week">Week 5</div>
         <div class="update-title">Progress Report</div>
@@ -417,6 +450,28 @@
       <p>Migrated the eFolio from a static host to a Git repository connected to Vercel for continuous deployment. Changes pushed to the repo now go live automatically &mdash; no manual upload step. Combined with Claude CLI, this makes iterative content updates and design changes significantly faster. The workflow change itself is the infrastructure improvement this week; the Week 5 report is the first entry published through the new pipeline.</p>
       <h2>Challenges &amp; Next Steps</h2>
       <p>The most significant challenge, raised directly by John during our partner meeting, is cost. The current three-piece design &mdash; two threaded ornament halves plus a PCB seat &mdash; carries too much per-unit manufacturing cost to scale. I am refining the approach: rather than a fully custom printable enclosure, the goal is to identify an existing off-the-shelf ornament shell and design only the closure mechanism and weather seal as a manufacturable part. This reduces unique-part count, lowers cost, and keeps the mechanical scope realistic. Next step: source candidate stock enclosures and prototype the closure attachment before the next CP check-in.</p>
+      <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
+    </div>
+
+    <!-- ENCLOSURE REPORT -->
+    <div class="page" id="enclosure-report">
+      <h1>Enclosure Design &mdash; Iteration &amp; Finalization</h1>
+      <div class="report-meta">Week [Date]</div>
+      <p>This report documents the enclosure design process from initial prototype through the finalized hybrid design &mdash; covering the specific failure modes that drove the pivot, the reasoning behind each tradeoff, and what the final approach achieves.</p>
+
+      <h2>What Drove the Pivot</h2>
+      <p>The V1 enclosure was a three-piece fully printed assembly: two threaded PETG hemispheres and a PCB seat ring. Three problems made it untenable at scale.</p>
+      <p>The most immediately visible problem was <strong>diffusivity</strong>. Translucent PETG was chosen with the intent of acting as a built-in light diffuser, but the effect worked against the display goal. The NeoPixels in this enclosure are the primary visual output &mdash; the ornament is a light display, not a lantern. Scattering the output softened point sources into ambient glow, washing out color saturation and reducing perceived brightness. Post-processing (acetone smoothing, sanding, polishing) could increase surface transparency but not change the fundamental bulk scatter of the material.</p>
+      <p>The second problem was <strong>waterproofing</strong>. A threaded joint is not watertight. Capillary action pulls water along the helical gap between the mating threads regardless of clamp force &mdash; the tighter you torque the halves, the more surface contact exists for water to wick into the interior. The enclosure hangs outdoors; this is not an edge case.</p>
+      <p>The third problem was <strong>part count</strong>. Three unique printed parts per unit means three separate CAD files to maintain, three separate print runs to manage, and three separate failure modes at assembly. At 25 units, that is 75 printed parts. John's feedback from our Week 5 check-in was direct: the cost and production complexity of a fully custom three-piece enclosure was not justifiable when off-the-shelf alternatives existed.</p>
+
+      <h2>The Finalized Hybrid Design</h2>
+      <p>The solution was to separate the structural and optical roles of the enclosure rather than asking one printed part to do both. The optical surface &mdash; the hemisphere visible to the audience &mdash; is an injection-molded commercial shell where surface quality and consistency are already controlled. The single printed part handles geometry-specific functions: PCB registration, wire routing, and the sealing interface.</p>
+      <p>Waterproofing is achieved via an o-ring compressed between the two halves, clamped by six M2 screws. The printed part carries a square groove sized for a standard 1&frasl;16&Prime; o-ring cross-section. The groove geometry targets approximately 30% o-ring compression with a 0.05&thinsp;mm vertical clearance at full clamp &mdash; enough compression to seal, not enough to extrude the o-ring out of the seat under clamp force. The joint is additionally backed with epoxy at final assembly.</p>
+      <p>The result: one printed part per half (two per enclosure), a reliable watertight seal, and maintainable interior access &mdash; the M2 screws can be removed in the field to service the PCB without destroying the enclosure.</p>
+
+      <h2>eFolio Changes Made</h2>
+      <p>Added Enclosure Iteration subsection to the Design page with stage-by-stage documentation and four reference images. Added this report to the Updates section.</p>
       <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
     </div>
 
@@ -559,6 +614,7 @@ var BC = {
   week3:{p:[['Home','home'],['Updates','updates']]},
   week5:{p:[['Home','home'],['Updates','updates']]},
   week4:{p:[['Home','home'],['Updates','updates']]},
+  'enclosure-report':{p:[['Home','home'],['Updates','updates']]},
   contract:{p:[['Home','home']]},
   partner:{p:[['Home','home']]},
   about:{p:[['Home','home']]},
