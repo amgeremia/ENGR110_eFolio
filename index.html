@@ -136,6 +136,23 @@
     /* Footer */
     footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--lt); font-family: var(--mono); font-size: 0.6em; letter-spacing: 0.06em; color: var(--dim); text-transform: uppercase; }
 
+    /* Projects */
+    .status { font-family: var(--mono); font-size: 0.58em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); border: 1px solid var(--rule); padding: 1px 6px; border-radius: 2px; }
+    .placeholder { color: var(--dim); font-style: italic; }
+    .home-archive { margin-top: 40px; }
+
+    /* Archive (folded in sidebar) */
+    .nav-archive summary {
+      font-family: var(--mono); font-size: 0.6em; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--dim); padding-left: 10px; cursor: pointer; list-style: none; margin-bottom: 5px;
+    }
+    .nav-archive summary::-webkit-details-marker { display: none; }
+    .nav-archive summary::before { content: '\25B8'; display: inline-block; width: 12px; transition: transform .12s; }
+    .nav-archive[open] summary::before { transform: rotate(90deg); }
+    .nav-archive summary:hover { color: var(--ink); }
+    .nav-section a { display: block; }
+    .archive-note { font-family: var(--mono); font-size: 0.62em; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); border: 1px solid var(--rule); padding: 8px 12px; margin-bottom: 28px; }
+
     /* Responsive */
     @media (max-width: 660px) {
       #shell { grid-template-columns: 1fr; }
@@ -158,15 +175,25 @@
       <a onclick="show('about')"   id="nav-about">About</a>
       <a onclick="show('contact')" id="nav-contact">Contact</a>
       <div class="nav-section">
-        <div class="nav-label">Project</div>
+        <div class="nav-label">Engr 2 Projects</div>
+        <a onclick="show('p1')" id="nav-p1">01 &nbsp;Design Notebook</a>
+        <a onclick="show('p2')" id="nav-p2">02 &nbsp;Acrylic LED Sign</a>
+        <a onclick="show('p3')" id="nav-p3">03 &nbsp;2D to 3D</a>
+        <a onclick="show('p4')" id="nav-p4">04 &nbsp;Phone Stand</a>
+        <a onclick="show('p5')" id="nav-p5">05 &nbsp;Name Plate</a>
+        <a onclick="show('p6')" id="nav-p6">06 &nbsp;Final Project</a>
+      </div>
+      <details class="nav-section nav-archive">
+        <summary>Archive &mdash; Engr 110</summary>
+        <a onclick="show('archive')"      id="nav-archive">CORAL Overview</a>
         <a onclick="show('partner')"      id="nav-partner">Community Partner</a>
         <a onclick="show('contract')"     id="nav-contract">Team Contract</a>
         <a onclick="show('design')"       id="nav-design">Design</a>
         <a onclick="show('deliverables')" id="nav-deliverables">Deliverables</a>
         <a onclick="show('updates')"      id="nav-updates">Updates</a>
-      </div>
+      </details>
     </nav>
-    <div id="sidebar-foot">Eng 110 &mdash; SCU &mdash; 2026</div>
+    <div id="sidebar-foot">Engr 2 &mdash; SCU &mdash; Fall 2026</div>
   </aside>
 
   <main id="main">
@@ -179,38 +206,179 @@
 
     <!-- HOME -->
     <div class="page active" id="home">
-      <div class="home-meta">Engineering 110 &nbsp;&mdash;&nbsp; Community-Based Design &nbsp;&mdash;&nbsp; Spring 2026</div>
-      <h1>CORAL LED Ornament Network</h1>
-      <p class="home-lede">A wireless network letting children at Christmas&#8209;in&#8209;the&#8209;Park individually program their own LED ornaments &mdash; designed and built by a four&#8209;person team at SCU.</p>
+      <div class="home-meta">Engineering 2 &nbsp;&mdash;&nbsp; SCU &nbsp;&mdash;&nbsp; Fall 2026</div>
+      <h1>Engr 2 &mdash; Project Portfolio</h1>
+      <p class="home-lede">[Course intro &mdash; one or two sentences on what Engr 2 covers and what this portfolio documents.]</p>
       <div class="home-grid">
-        <div class="home-card" onclick="show('design')">
-          <div class="card-label">Design</div>
-          <div class="card-title">PCB, enclosure &amp; network architecture</div>
+        <div class="home-card" onclick="show('p1')">
+          <div class="card-label">Project 01</div>
+          <div class="card-title">Design Notebook</div>
         </div>
-        <div class="home-card" onclick="show('final')">
-          <div class="card-label">Final</div>
-          <div class="card-title">Final prototype, documentation &amp; reflections</div>
+        <div class="home-card" onclick="show('p2')">
+          <div class="card-label">Project 02</div>
+          <div class="card-title">Acrylic LED Sign</div>
         </div>
-        <div class="home-card" onclick="show('updates')">
-          <div class="card-label">Updates</div>
-          <div class="card-title">Weekly progress reports</div>
+        <div class="home-card" onclick="show('p3')">
+          <div class="card-label">Project 03</div>
+          <div class="card-title">2D to 3D</div>
         </div>
-        <div class="home-card" onclick="show('partner')">
-          <div class="card-label">Community Partner</div>
-          <div class="card-title">CORAL after-school program, San Jose</div>
+        <div class="home-card" onclick="show('p4')">
+          <div class="card-label">Project 04</div>
+          <div class="card-title">Phone Stand</div>
         </div>
+        <div class="home-card" onclick="show('p5')">
+          <div class="card-label">Project 05</div>
+          <div class="card-title">Name Plate</div>
+        </div>
+        <div class="home-card" onclick="show('p6')">
+          <div class="card-label">Project 06</div>
+          <div class="card-title">Final Project</div>
+        </div>
+      </div>
+      <div class="home-archive">
+        <h2>Archive</h2>
+        <div class="hub-item" onclick="show('archive')"><span class="hub-num">&mdash;</span><span class="hub-title">Engr 110 &mdash; CORAL LED Ornament Network</span><span class="hub-sub">Spring 2026</span></div>
       </div>
       <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
     </div>
 
-    <!-- PROJECT (legacy redirect hub) -->
-    <div class="page" id="project">
-      <h1>Project</h1>
-      <div class="hub-item" onclick="show('partner')"><span class="hub-num">01</span><span class="hub-title">Community Partner</span><span class="hub-sub">CORAL</span></div>
-      <div class="hub-item" onclick="show('contract')"><span class="hub-num">02</span><span class="hub-title">Team Contract</span><span class="hub-sub">Apr 21</span></div>
-      <div class="hub-item" onclick="show('design')"><span class="hub-num">03</span><span class="hub-title">Design</span><span class="hub-sub">In progress</span></div>
-      <div class="hub-item" onclick="show('deliverables')"><span class="hub-num">04</span><span class="hub-title">Deliverables</span><span class="hub-sub">Wk 2&ndash;4</span></div>
-      <div class="hub-item" onclick="show('updates')"><span class="hub-num">05</span><span class="hub-title">Updates</span><span class="hub-sub">Wk 2&ndash;Final</span></div>
+    <!-- PROJECT 01 -->
+    <div class="page" id="p1">
+      <h1>Design Notebook</h1>
+      <div class="report-meta">Project 01 &nbsp;&mdash;&nbsp; Engr 2 &nbsp;&mdash;&nbsp; <span class="status">Upcoming</span></div>
+      <h2>Overview</h2>
+      <p class="placeholder">[What the design notebook is for and how it&rsquo;s kept.]</p>
+      <h2>Format</h2>
+      <p class="placeholder">[Structure of entries &mdash; dates, sketches, notes, dimensions.]</p>
+      <h2>Entries</h2>
+      <p class="placeholder">[Selected notebook pages, linked to the projects below.]</p>
+      <h2>Reflection</h2>
+      <p class="placeholder">[How the notebook shaped the design process.]</p>
+      <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
+    </div>
+
+    <!-- PROJECT 02 -->
+    <div class="page" id="p2">
+      <h1>Acrylic LED Sign</h1>
+      <div class="report-meta">Project 02 &nbsp;&mdash;&nbsp; Engr 2 &nbsp;&mdash;&nbsp; <span class="status">Upcoming</span></div>
+      <h2>Overview</h2>
+      <p class="placeholder">[Project brief &mdash; what was assigned and the goal.]</p>
+      <h2>Requirements</h2>
+      <p class="placeholder">[Constraints, specs, materials, and deliverables.]</p>
+      <h2>Concept &amp; Sketches</h2>
+      <p class="placeholder">[Initial ideas, sketches, and the chosen direction.]</p>
+      <h2>Process</h2>
+      <p class="placeholder">[CAD, fabrication steps, tools used, and iterations.]</p>
+      <h2>Final Result</h2>
+      <p class="placeholder">[Photos of the finished piece.]</p>
+      <h2>Reflection</h2>
+      <p class="placeholder">[What worked, what didn&rsquo;t, and what I&rsquo;d change.]</p>
+      <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
+    </div>
+
+    <!-- PROJECT 03 -->
+    <div class="page" id="p3">
+      <h1>2D to 3D</h1>
+      <div class="report-meta">Project 03 &nbsp;&mdash;&nbsp; Engr 2 &nbsp;&mdash;&nbsp; <span class="status">Upcoming</span></div>
+      <h2>Overview</h2>
+      <p class="placeholder">[Project brief &mdash; what was assigned and the goal.]</p>
+      <h2>Requirements</h2>
+      <p class="placeholder">[Constraints, specs, materials, and deliverables.]</p>
+      <h2>Concept &amp; Sketches</h2>
+      <p class="placeholder">[Initial ideas, sketches, and the chosen direction.]</p>
+      <h2>Process</h2>
+      <p class="placeholder">[CAD, fabrication steps, tools used, and iterations.]</p>
+      <h2>Final Result</h2>
+      <p class="placeholder">[Photos of the finished piece.]</p>
+      <h2>Reflection</h2>
+      <p class="placeholder">[What worked, what didn&rsquo;t, and what I&rsquo;d change.]</p>
+      <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
+    </div>
+
+    <!-- PROJECT 04 -->
+    <div class="page" id="p4">
+      <h1>Phone Stand</h1>
+      <div class="report-meta">Project 04 &nbsp;&mdash;&nbsp; Engr 2 &nbsp;&mdash;&nbsp; <span class="status">Upcoming</span></div>
+      <h2>Overview</h2>
+      <p class="placeholder">[Project brief &mdash; what was assigned and the goal.]</p>
+      <h2>Requirements</h2>
+      <p class="placeholder">[Constraints, specs, materials, and deliverables.]</p>
+      <h2>Concept &amp; Sketches</h2>
+      <p class="placeholder">[Initial ideas, sketches, and the chosen direction.]</p>
+      <h2>Process</h2>
+      <p class="placeholder">[CAD, fabrication steps, tools used, and iterations.]</p>
+      <h2>Final Result</h2>
+      <p class="placeholder">[Photos of the finished piece.]</p>
+      <h2>Reflection</h2>
+      <p class="placeholder">[What worked, what didn&rsquo;t, and what I&rsquo;d change.]</p>
+      <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
+    </div>
+
+    <!-- PROJECT 05 -->
+    <div class="page" id="p5">
+      <h1>Name Plate</h1>
+      <div class="report-meta">Project 05 &nbsp;&mdash;&nbsp; Engr 2 &nbsp;&mdash;&nbsp; <span class="status">Upcoming</span></div>
+      <h2>Overview</h2>
+      <p class="placeholder">[Project brief &mdash; what was assigned and the goal.]</p>
+      <h2>Requirements</h2>
+      <p class="placeholder">[Constraints, specs, materials, and deliverables.]</p>
+      <h2>Concept &amp; Sketches</h2>
+      <p class="placeholder">[Initial ideas, sketches, and the chosen direction.]</p>
+      <h2>Process</h2>
+      <p class="placeholder">[CAD, fabrication steps, tools used, and iterations.]</p>
+      <h2>Final Result</h2>
+      <p class="placeholder">[Photos of the finished piece.]</p>
+      <h2>Reflection</h2>
+      <p class="placeholder">[What worked, what didn&rsquo;t, and what I&rsquo;d change.]</p>
+      <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
+    </div>
+
+    <!-- PROJECT 06 -->
+    <div class="page" id="p6">
+      <h1>Final Project</h1>
+      <div class="report-meta">Project 06 &nbsp;&mdash;&nbsp; Engr 2 &nbsp;&mdash;&nbsp; <span class="status">Upcoming</span></div>
+      <h2>Overview</h2>
+      <p class="placeholder">[Final project brief and goal.]</p>
+      <h2>Proposal</h2>
+      <p class="placeholder">[Problem, idea, and plan &mdash; what I set out to build.]</p>
+      <h2>Requirements</h2>
+      <p class="placeholder">[Constraints, specs, materials, and deliverables.]</p>
+      <h2>Concept &amp; Sketches</h2>
+      <p class="placeholder">[Initial ideas, sketches, and the chosen direction.]</p>
+      <h2>Process</h2>
+      <p class="placeholder">[CAD, fabrication steps, tools used, and iterations.]</p>
+      <h2>Final Result</h2>
+      <p class="placeholder">[Photos and demo of the finished project.]</p>
+      <h2>Reflection</h2>
+      <p class="placeholder">[What worked, what didn&rsquo;t, and what I&rsquo;d change.]</p>
+      <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
+    </div>
+
+    <!-- ARCHIVE: ENGR 110 -->
+    <div class="page" id="archive">
+      <div class="archive-note">Archived &mdash; Engr 110, Spring 2026</div>
+      <div class="home-meta">Engineering 110 &nbsp;&mdash;&nbsp; Community-Based Design &nbsp;&mdash;&nbsp; Spring 2026</div>
+      <h1>CORAL LED Ornament Network</h1>
+      <p class="home-lede">A wireless network letting children at Christmas&#8209;in&#8209;the&#8209;Park individually program their own LED ornaments &mdash; designed and built by a four&#8209;person team at SCU.</p>
+      <div class="hub-item" onclick="show('final')"><span class="hub-num">01</span><span class="hub-title">Final &mdash; Prototype, Documentation &amp; Reflections</span><span class="hub-sub">Final</span></div>
+      <div class="hub-item" onclick="show('design')"><span class="hub-num">02</span><span class="hub-title">Design</span><span class="hub-sub">PCB &amp; Enclosure</span></div>
+      <div class="hub-item" onclick="show('partner')"><span class="hub-num">03</span><span class="hub-title">Community Partner</span><span class="hub-sub">CORAL</span></div>
+      <div class="hub-item" onclick="show('contract')"><span class="hub-num">04</span><span class="hub-title">Team Contract</span><span class="hub-sub">Apr 21</span></div>
+      <div class="hub-item" onclick="show('deliverables')"><span class="hub-num">05</span><span class="hub-title">Deliverables</span><span class="hub-sub">Wk 2&ndash;4</span></div>
+      <div class="hub-item" onclick="show('updates')"><span class="hub-num">06</span><span class="hub-title">Updates</span><span class="hub-sub">Wk 2&ndash;Final</span></div>
+      <h2>The Team</h2>
+      <div class="team-row">
+        <div><div class="team-name"><a href="https://vjangid.wixsite.com/vikram-jangid/about" target="_blank">Vikram Jangid</a></div><div class="team-role">Technical &amp; Design Lead</div></div>
+        <div style="font-size:0.9em;color:var(--mid);">Senior EE major specializing in high-frequency circuits and wireless communication. Distinguished mustache.</div>
+      </div>
+      <div class="team-row">
+        <div><div class="team-name"><a href="https://sites.google.com/scu.edu/danish-saini-efolio/about-me" target="_blank">Danish Saini</a></div><div class="team-role">Documentation Lead</div></div>
+        <div style="font-size:0.9em;color:var(--mid);">Sophomore EE major, signal processing and FPGAs.</div>
+      </div>
+      <div class="team-row">
+        <div><div class="team-name">Manya Goutam</div><div class="team-role">Software Lead</div></div>
+        <div style="font-size:0.9em;color:var(--mid);">General Engineering major with a systems-level perspective.</div>
+      </div>
       <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
     </div>
 
@@ -560,19 +728,6 @@
         <img id="img-gus" src="" alt="Gus" style="width:100%;display:block;border:1px solid var(--rule);">
       </div>
       <p>Hi, I'm Gus &mdash; a third-year general engineering major at SCU. I've worked as a bike mechanic, carpenter, and in quite a few restaurants. I'm interested in applying mechanical and practical skills to physical solutions at scale. Technical skills: CAD/technical drawing, C-based languages, embedded systems, and extensive practical knowledge of materials.</p>
-      <h2>The Team</h2>
-      <div class="team-row">
-        <div><div class="team-name"><a href="https://vjangid.wixsite.com/vikram-jangid/about" target="_blank">Vikram Jangid</a></div><div class="team-role">Technical &amp; Design Lead</div></div>
-        <div style="font-size:0.9em;color:var(--mid);">Senior EE major specializing in high-frequency circuits and wireless communication. Distinguished mustache.</div>
-      </div>
-      <div class="team-row">
-        <div><div class="team-name"><a href="https://sites.google.com/scu.edu/danish-saini-efolio/about-me" target="_blank">Danish Saini</a></div><div class="team-role">Documentation Lead</div></div>
-        <div style="font-size:0.9em;color:var(--mid);">Sophomore EE major, signal processing and FPGAs.</div>
-      </div>
-      <div class="team-row">
-        <div><div class="team-name">Manya Goutam</div><div class="team-role">Software Lead</div></div>
-        <div style="font-size:0.9em;color:var(--mid);">General Engineering major with a systems-level perspective.</div>
-      </div>
       <footer>&copy; eFolio &mdash; Gus &mdash; 2026</footer>
     </div>
 
@@ -592,18 +747,25 @@ var IMGS = {};
 
 // ── Navigation ─────────────────────────────────────────────────
 var BC = {
-  home:{},project:{p:[['Home','home']]},
-  design:{p:[['Home','home']]},
-  deliverables:{p:[['Home','home']]},
-  updates:{p:[['Home','home']]},
-  final:{p:[['Home','home'],['Updates','updates']]},
-  week2:{p:[['Home','home'],['Updates','updates']]},
-  week3:{p:[['Home','home'],['Updates','updates']]},
-  week5:{p:[['Home','home'],['Updates','updates']]},
-  week4:{p:[['Home','home'],['Updates','updates']]},
-  'enclosure-report':{p:[['Home','home'],['Updates','updates']]},
-  contract:{p:[['Home','home']]},
-  partner:{p:[['Home','home']]},
+  home:{},
+  archive:{p:[['Home','home']]},
+  p1:{p:[['Home','home']]},
+  p2:{p:[['Home','home']]},
+  p3:{p:[['Home','home']]},
+  p4:{p:[['Home','home']]},
+  p5:{p:[['Home','home']]},
+  p6:{p:[['Home','home']]},
+  design:{p:[['Home','home'],['Archive','archive']]},
+  deliverables:{p:[['Home','home'],['Archive','archive']]},
+  updates:{p:[['Home','home'],['Archive','archive']]},
+  contract:{p:[['Home','home'],['Archive','archive']]},
+  partner:{p:[['Home','home'],['Archive','archive']]},
+  final:{p:[['Home','home'],['Archive','archive'],['Updates','updates']]},
+  week2:{p:[['Home','home'],['Archive','archive'],['Updates','updates']]},
+  week3:{p:[['Home','home'],['Archive','archive'],['Updates','updates']]},
+  week4:{p:[['Home','home'],['Archive','archive'],['Updates','updates']]},
+  week5:{p:[['Home','home'],['Archive','archive'],['Updates','updates']]},
+  'enclosure-report':{p:[['Home','home'],['Archive','archive'],['Updates','updates']]},
   about:{p:[['Home','home']]},
   contact:{p:[['Home','home']]}
 };
@@ -616,6 +778,8 @@ function show(id) {
   document.querySelectorAll('nav a').forEach(function(a){ a.classList.remove('active'); });
   var nav = document.getElementById('nav-'+id);
   if (nav) nav.classList.add('active');
+  var arch = document.querySelector('.nav-archive');
+  if (arch && ((nav && arch.contains(nav)) || (BC[id] && JSON.stringify(BC[id]).indexOf('archive') > -1))) arch.open = true;
   var entry = BC[id] || {};
   var crumbs = entry.p || [];
   var bc = document.getElementById('breadcrumb');

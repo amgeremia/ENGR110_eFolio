@@ -1,6 +1,10 @@
 # eFolio — Gus
 
-Personal engineering portfolio for Eng 110, SCU 2026.
+Personal engineering portfolio for Engr 2, SCU Fall 2026.
+
+Six Engr 2 project pages (`p1`–`p6`) are outlined with placeholder sections.
+The earlier Engr 110 / CORAL work is archived: collapsed under **Archive** in the
+sidebar, with its overview page at `archive`.
 
 ## Structure
 
