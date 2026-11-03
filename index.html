@@ -425,7 +425,10 @@
       <div class="report-meta">Project 03 &nbsp;&mdash;&nbsp; Engr 2 &nbsp;&mdash;&nbsp; Laser cutter + &#8539;&Prime; plywood</div>
       <p class="home-lede" style="margin-top:0;">I took apart an Anker Soundcore 2 Bluetooth speaker and built it a new laser-cut plywood box, with a rastered picture on the front.</p>
 
-      <p><span class="todo">TODO: Fig 1, the finished speaker (front view).</span></p>
+      <div class="img-wrap">
+        <img src="images/P3_front.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Front of the plywood speaker box with two black drivers and a rastered swan between them" style="width:100%;max-width:520px;display:block;">
+        <div class="img-caption">Fig 1. The finished speaker. Two drivers on the front with a rastered swan below them. Click to enlarge.</div>
+      </div>
 
       <p>This page goes through the project in order. First is what I made and why, then my pitch, the teardown of the original speaker, my measurements, and the design in MakerCase. After that is the build, my time log, a reflection, and photos of the finished speaker from each side.</p>
 
@@ -442,11 +445,14 @@
 
       <h2>Teardown</h2>
       <p>Getting the speaker apart was the hardest part of the whole project. Because it's waterproof, everything was glued. I had to pry off the front grill, take out 8 screws, and use a Dremel to cut through the thick rubber casing.</p>
-      <p>I left out two parts. What I think is the low-end driver was fused to the front baffle, so I couldn't get it out without breaking it. The microphone was stuck the same way, and you can see it in the photos.</p>
-      <p><span class="todo">TODO: photos of the teardown or the parts laid out, if you have any.</span></p>
+      <p>I left out two parts. What I think is the low-end driver was fused to the front baffle, so I couldn't get it out without breaking it. The microphone was stuck the same way. Both are still in the original front baffle in Fig 2.</p>
+      <div class="img-wrap">
+        <img src="images/P3_original_baffle.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Original black plastic front baffle from the Soundcore 2 with two empty driver holes, a rectangular membrane in the middle, and a small round microphone" style="width:100%;max-width:440px;display:block;">
+        <div class="img-caption">Fig 2. The original front baffle. The two round holes held the drivers I reused. The rectangle in the middle is the part I think is the low-end driver, and the small circle to its lower right is the microphone. Click to enlarge.</div>
+      </div>
 
       <h2>Measurements</h2>
-      <p>I measured the board, each driver, and the rest of the parts with calipers. From those numbers I worked out the inside size of the box and where each hole needed to go: the driver openings, the buttons, the charging port, and anything else that had to line up with the outside of the box.</p>
+      <p>I measured the board, each driver, and the rest of the parts with calipers. From those numbers I worked out the inside size of the box and where each hole needed to go: the two driver openings with four screw holes each, five slots on top for the buttons, and a long slot on the side for the port.</p>
       <div class="goal-row">
         <div class="goal-cell">
           <div class="goal-label">Box Size</div>
@@ -463,9 +469,20 @@
       </div>
 
       <h2>Design &amp; Build</h2>
-      <p>I made the box in MakerCase, downloaded the flat pieces, and added the cutouts for the parts and the rastered picture for the front. <span class="todo">TODO: what software did you add the cutouts in? What is the picture on the front and why did you pick it? Laser settings for the cut and the raster?</span></p>
+      <p>I made the box in MakerCase, downloaded the flat pieces, and added the cutouts for the parts and the rastered picture for the front. <span class="todo">TODO: what software did you add the cutouts in? Why the swan? Laser settings for the cut and the raster?</span></p>
       <p>Since I wanted to cut it all in one shot, I checked every cutout against my measurements before sending it to the laser. <span class="todo">TODO: did it fit the first time? Anything you had to fix, sand, or recut?</span></p>
       <p><span class="todo">TODO: any proof-of-concept prototype from the first class? A test cut of a corner or a cutout?</span></p>
+
+      <div class="img-pair">
+        <div>
+          <img src="images/P3_top_buttons.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Top of the speaker box with five small rectangular slots for the buttons" style="width:100%;display:block;">
+          <div class="img-caption">Fig 3a. Top: five slots line up with the original buttons.</div>
+        </div>
+        <div>
+          <img src="images/P3_side_port.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="End of the speaker box with one long slot near the edge" style="width:100%;display:block;">
+          <div class="img-caption">Fig 3b. Side: one long slot for the port.</div>
+        </div>
+      </div>
 
       <h2>Time Log</h2>
       <table class="log-table">
@@ -487,7 +504,11 @@
       <p><span class="todo">TODO: what did you learn, and was it valuable? A few starting points: how hard the teardown was, measuring everything so it fit in one cut, using MakerCase, and what you'd change next time.</span></p>
 
       <h2>Final Display</h2>
-      <p><span class="todo">TODO: photos of each side, with a line about what's on each one (front picture, buttons, port, etc.).</span></p>
+      <p>Here's the finished speaker. The front has the two drivers and the rastered swan (Fig 1). The top has five slots for the buttons (Fig 3a), and the side has a slot for the port (Fig 3b). The whole box is held together with finger joints from MakerCase. <span class="todo">TODO: does it play? How does it sound compared to the original?</span></p>
+      <div class="img-wrap">
+        <img src="images/P3_front.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Front of the finished plywood speaker box with two drivers and a rastered swan" style="width:100%;max-width:520px;display:block;">
+        <div class="img-caption">Fig 4. Front of the finished speaker. Click to enlarge.</div>
+      </div>
       <footer>&copy; Digital Notebook &mdash; Gus &mdash; 2026</footer>
     </div>
 
