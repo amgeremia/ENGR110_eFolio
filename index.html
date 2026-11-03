@@ -138,6 +138,16 @@
 
     /* Projects */
     .home-archive { margin-top: 40px; }
+    .sub-head { font-family: var(--mono); font-size: 0.68em; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 28px; margin-bottom: 8px; color: var(--ink); }
+    .img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 6px; }
+    .img-pair .img-caption { margin-bottom: 0; }
+    .log-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 0.9em; }
+    .log-table th { font-family: var(--mono); font-size: 0.62em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); font-weight: 400; text-align: left; border-bottom: 1px solid var(--rule); padding: 8px 10px 8px 0; }
+    .log-table td { border-bottom: 1px solid var(--lt); padding: 10px 10px 10px 0; vertical-align: top; line-height: 1.55; }
+    .log-table td:first-child { font-family: var(--mono); font-size: 0.7em; white-space: nowrap; color: var(--mid); }
+    .log-table td:nth-child(2) { font-family: var(--mono); font-size: 0.7em; white-space: nowrap; }
+    .log-table .log-where { display: block; font-family: var(--mono); font-size: 0.66em; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); margin-bottom: 2px; }
+    .todo { background: #fff3b0; color: #6b5400; font-family: var(--mono); font-size: 0.78em; padding: 1px 5px; border-radius: 2px; }
 
     /* Archive (folded in sidebar) */
     .nav-archive summary {
@@ -159,7 +169,8 @@
       nav { flex-direction: row; flex-wrap: wrap; }
       .nav-section, .nav-label, #sidebar-foot { display: none; }
       #main { padding: 24px 20px 60px; }
-      .home-grid, .goal-row { grid-template-columns: 1fr; }
+      .home-grid, .goal-row, .img-pair { grid-template-columns: 1fr; }
+      .log-table td:first-child, .log-table td:nth-child(2) { white-space: normal; }
     }
   </style>
 </head>
@@ -292,8 +303,95 @@
 
     <!-- PROJECT 02 -->
     <div class="page" id="p2">
-      <h1>Acrylic LED Sign</h1>
-      <div class="report-meta">Project 02 &nbsp;&mdash;&nbsp; Engr 2</div>
+      <h1>Acrylic LED Sign &mdash; Edge-Lit Lamppost</h1>
+      <div class="report-meta">Project 02 &nbsp;&mdash;&nbsp; Engr 2 &nbsp;&mdash;&nbsp; Laser cutter + LED base</div>
+      <p class="home-lede" style="margin-top:0;">A laser-engraved acrylic panel that sits in an LED base and glows only where it has been etched &mdash; developed over three prototypes, from a rough-edged cowboy to a symmetrical Victorian lamppost.</p>
+
+      <div class="img-wrap">
+        <img src="images/P2_v2_lamppost.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Laser-engraved acrylic lamppost panel with a rounded top and a stepped base tab, lying on a green cutting mat" style="width:100%;max-width:440px;display:block;">
+        <div class="img-caption">Fig 1. Version 2 &mdash; the lamppost design that became my final sign. Click to enlarge.</div>
+      </div>
+
+      <p>This page tells the story of the project in order: what I set out to make and why, the research and measurements behind it, each of the three prototypes and what I learned from them, a time log of my work in and outside of class, a reflection, and finally the finished sign on display.</p>
+
+      <h2>Overview &mdash; What I Did &amp; Why</h2>
+      <p>The goal of Project 2 was to design and build an edge-lit sign: a sheet of clear acrylic with an image engraved into its face, standing in a base with LEDs that shine up into the bottom edge. <span class="todo">TODO: one or two sentences on why you chose these images &mdash; e.g., who the sign is for or what it means to you.</span></p>
+      <p>The project came down to three design problems: choosing artwork that would engrave cleanly, designing a perimeter that looked intentional and complemented the image, and sizing the bottom tab so the panel fit snugly in the LED base. I worked through these over three versions, changing one major variable at a time.</p>
+
+      <h2>Research &mdash; How Edge Lighting Works</h2>
+      <p>Before designing anything, I wanted to understand why an engraved image lights up while the rest of the sheet stays clear. Light from the LEDs enters the bottom edge and is trapped inside the acrylic by <a href="https://www.instructables.com/Edge-Lit-Displays/" target="_blank">total internal reflection</a>, bouncing between the two flat faces. Wherever the surface has been engraved, that reflection is interrupted and the light escapes toward the viewer, so <em>only</em> the engraving glows. That meant my image needed to be engraved as solid, high-contrast shapes; fine gray tones would not carry much light.</p>
+      <p>I also learned that not all clear acrylic engraves the same way. <a href="https://www.thunderlaser.com/laser-wiki/material-applications/extruded-acrylic-vs-cast-acrylic" target="_blank">Cast acrylic</a> engraves to a bright, frosted white, while extruded acrylic tends to melt and leaves a clearer, fainter mark (<a href="https://graphics-pro.com/feature/producing-a-frosty-white-engraving-on-acrylic/" target="_blank">more on frosted engraving</a>). This turned out to explain the biggest surprise of the project &mdash; see Version 3 below.</p>
+
+      <h2>Measurements</h2>
+      <p>The LED base has a slot that the acrylic tab drops into. To make sure every version would fit, I measured the slot with digital calipers and designed the tab from those numbers instead of guessing.</p>
+      <div class="goal-row">
+        <div class="goal-cell">
+          <div class="goal-label">Base Slot</div>
+          <div class="goal-body"><span class="todo">TODO: length &times; width</span></div>
+        </div>
+        <div class="goal-cell">
+          <div class="goal-label">Acrylic</div>
+          <div class="goal-body"><span class="todo">TODO: thickness, cast/extruded</span></div>
+        </div>
+        <div class="goal-cell">
+          <div class="goal-label">Panel Size</div>
+          <div class="goal-body"><span class="todo">TODO: overall width &times; height</span></div>
+        </div>
+      </div>
+      <p><span class="todo">TODO: tab dimensions and any clearance you added (e.g., +0.2&nbsp;mm), plus the laser settings used for cutting and engraving.</span></p>
+
+      <h2>Prototypes</h2>
+
+      <p class="sub-head">Version 1 &mdash; The Cowboy</p>
+      <div class="img-wrap">
+        <img src="images/P2_v1_cowboy.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="First prototype: acrylic panel engraved with a bucking-bronco cowboy, with an irregular, angular outline" style="width:100%;max-width:440px;display:block;">
+        <div class="img-caption">Fig 2. Version 1 &mdash; a bucking-bronco cowboy with an irregular perimeter. Click to enlarge.</div>
+      </div>
+      <p>My first sign was a cowboy on a bucking horse. The engraving came out bold and bright: the image is made of large, solid shapes, which is exactly what edge lighting rewards. The weak point was the perimeter. I traced a rough outline loosely around the figure, and the result was an uneven, angular shape that looked accidental rather than designed. It distracted from the image instead of framing it.</p>
+      <p><strong>Takeaway:</strong> the outline of the acrylic is part of the design, not just the edge of the part.</p>
+
+      <p class="sub-head">Version 2 &mdash; The Lamppost</p>
+      <p>For the second version I switched to a tall, Victorian-style lamppost and gave it a clean, symmetrical perimeter: a tall rectangle with a rounded top and a stepped tab at the bottom to seat in the base. The symmetrical shape mirrors the lamppost itself, and I think it looks much more finished. The engraving came out crisp and frosted, and the tab, sized from my caliper measurements, fit the base well (Fig 1).</p>
+      <p>Version 2 was the design that worked, but the physical part didn&rsquo;t survive. It was scratched while being transported, and part of the base tab broke off &mdash; you can see the missing corner on the lower left of the tab in Fig 1.</p>
+      <p><strong>Takeaway:</strong> the design was right; I needed to protect the part. Keeping the masking paper on until the end and carrying it flat would have prevented most of the damage.</p>
+
+      <p class="sub-head">Version 3 &mdash; The Lamppost, Recut on Scrap</p>
+      <div class="img-pair">
+        <div>
+          <img src="images/P2_v2_lamppost.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Version 2 lamppost with a bright, frosted engraving" style="width:100%;display:block;">
+          <div class="img-caption">Fig 3a. Version 2 &mdash; bright, frosted engraving.</div>
+        </div>
+        <div>
+          <img src="images/P2_v3_lamppost_scrap.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Version 3 lamppost cut from scrap acrylic, with a faint, nearly clear engraving" style="width:100%;display:block;">
+          <div class="img-caption">Fig 3b. Version 3 &mdash; same file, scrap acrylic, faint engraving.</div>
+        </div>
+      </div>
+      <p>To replace the damaged part, I cut Version 3 from the identical file on a piece of scrap acrylic. The cut and tab came out fine, but the engraving rastered very differently: instead of a solid frosted white, the lamppost came out faint and nearly clear, with streaky, broken-up detail in the base. Side by side (Figs 3a and 3b), the difference is obvious, and it made for a much weaker sign when lit.</p>
+      <p>Since the file was unchanged, the cause had to be the material or the machine. Based on my research, the most likely explanation is that the scrap was a different type of acrylic (probably extruded rather than cast), which melts and leaves a clear mark instead of frosting. <span class="todo">TODO: confirm &mdash; were the laser settings and machine the same for v2 and v3? Do you know what the scrap was?</span></p>
+      <p><strong>Takeaway:</strong> material matters as much as the file. Running a small test engrave on unknown stock first would have caught this in a minute.</p>
+
+      <h2>Time Log</h2>
+      <p><span class="todo">TODO: replace dates and hours with your real log.</span></p>
+      <table class="log-table">
+        <thead><tr><th>Date</th><th>Hours</th><th>Activity &amp; Reflection</th></tr></thead>
+        <tbody>
+          <tr><td>TODO</td><td>TODO</td><td><span class="log-where">In class</span>Project introduction and demo of edge-lit acrylic signs. Learned how the LED base works and what makes a good engraving image.</td></tr>
+          <tr><td>TODO</td><td>TODO</td><td><span class="log-where">Outside class</span>Research on edge lighting and on cast versus extruded acrylic (linked above). Searched for high-contrast artwork and chose the cowboy.</td></tr>
+          <tr><td>TODO</td><td>TODO</td><td><span class="log-where">TODO</span>Measured the LED base slot with calipers and designed the tab to match.</td></tr>
+          <tr><td>TODO</td><td>TODO</td><td><span class="log-where">TODO</span>Cut Version 1 (cowboy). The engraving worked, but the rough perimeter looked unintentional.</td></tr>
+          <tr><td>TODO</td><td>TODO</td><td><span class="log-where">TODO</span>Redesigned with the lamppost and a symmetrical, round-topped perimeter. Cut Version 2, which fit the base and engraved cleanly.</td></tr>
+          <tr><td>TODO</td><td>TODO</td><td><span class="log-where">TODO</span>Version 2 was scratched in transport and part of the tab broke. Recut as Version 3 on scrap; the engraving came out faint.</td></tr>
+          <tr><td>TODO</td><td>TODO</td><td><span class="log-where">Outside class</span>Compared Versions 2 and 3, researched why they differed, and documented the project on this page.</td></tr>
+        </tbody>
+      </table>
+      <p><span class="todo">TODO: total hours</span></p>
+
+      <h2>Reflection</h2>
+      <p>The most valuable thing I learned is that a laser file is only half the design; the material and the handling are the other half. Version 2 and Version 3 came from the exact same file and still produced very different signs, and the best part I made was damaged in transport, not by a design flaw. Going forward, I will run a quick test engrave on any unfamiliar stock and protect finished parts until they are installed.</p>
+      <p>I also learned that the perimeter deserves as much attention as the image. The cowboy engraving was strong, but its rough outline undercut it, while the simple, symmetrical outline of the lamppost made the whole piece look deliberate. Finally, measuring the base with calipers before cutting paid off: every version fit, so I could spend my iterations on the look of the sign instead of on fit. <span class="todo">TODO: add anything personal &mdash; was the project valuable to you, and what would you change?</span></p>
+
+      <h2>Final Display</h2>
+      <p>My final sign is the Version 2 lamppost design. <span class="todo">TODO: which physical part is final (v2 or v3)? Add photos or a video of it lit up in the LED base, ideally in a dark room.</span></p>
       <footer>&copy; Digital Notebook &mdash; Gus &mdash; 2026</footer>
     </div>
 
