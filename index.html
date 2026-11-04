@@ -147,6 +147,7 @@
     .log-table td:first-child { font-family: var(--mono); font-size: 0.7em; white-space: nowrap; color: var(--mid); }
     .log-table td:nth-child(2) { font-family: var(--mono); font-size: 0.7em; white-space: nowrap; }
     .log-table .log-where { display: block; font-family: var(--mono); font-size: 0.66em; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); margin-bottom: 2px; }
+    .todo { background: #fff3b0; color: #6b5400; font-family: var(--mono); font-size: 0.78em; padding: 1px 5px; border-radius: 2px; }
 
     /* Archive (folded in sidebar) */
     .nav-archive summary {
@@ -527,8 +528,71 @@
 
     <!-- PROJECT 04 -->
     <div class="page" id="p4">
-      <h1>Phone Stand</h1>
-      <div class="report-meta">Project 04 &nbsp;&mdash;&nbsp; Engr 2</div>
+      <h1>Phone Stand &mdash; 3D Printed Charging Stand</h1>
+      <div class="report-meta">Project 04 &nbsp;&mdash;&nbsp; Engr 2 &nbsp;&mdash;&nbsp; 3D printer + PLA</div>
+      <p class="home-lede" style="margin-top:0;">A 3D printed phone stand, resized from a GrabCAD model to fit my phone and charger, with my name recessed into the back.</p>
+
+      <div class="img-wrap">
+        <img src="images/P4_back_gus.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Gray 3D printed phone stand seen from the back, with GUS recessed into the back panel and a hole below it" style="width:100%;max-width:440px;display:block;">
+        <div class="img-caption">Fig 1. The finished stand from the back, with the recessed GUS. Click to enlarge.</div>
+      </div>
+
+      <p>This page goes through the project in order. First is what I made and why, then the calibration cube we printed to learn the printers, the research I did, and how I changed the model. After that is the print, my time log, a reflection, and photos of the finished stand.</p>
+
+      <h2>Overview</h2>
+      <p>The goal of Project 4 was to 3D print a phone stand that holds my phone with its case on and charges it at the same time. I started from a model I found on GrabCAD, changed the dimensions to fit my phone, and added my name to the back. <span class="todo">TODO: anything about why you picked this model?</span></p>
+
+      <h2>Calibration Cube</h2>
+      <p><span class="todo">TODO: what did you do for the calibration cube? Which printer, what you learned about tolerances, and a photo if you have one.</span></p>
+
+      <h2>Research</h2>
+      <p>The starting model is <span class="todo">TODO: model name and GrabCAD link</span>, downloaded from <a href="https://grabcad.com/library" target="_blank">GrabCAD</a> as a STEP file. I picked a STEP file on purpose, because the assignment warned that STL files import as meshes, which are very hard to change. A STEP file comes in as a real solid, so I could edit the dimensions.</p>
+      <p>For the print settings, I read up on <a href="https://help.prusa3d.com/article/infill_42" target="_blank">infill</a> and <a href="https://help.prusa3d.com/article/organic-supports_480131" target="_blank">organic supports</a> in PrusaSlicer. Organic supports branch out like a tree to hold up overhangs, and they come off cleaner than regular supports. Weston, one of the TAs, suggested painting them on only where the stand needed them.</p>
+
+      <h2>Design</h2>
+      <p>I changed the model to fit my phone with its case on: 80&nbsp;mm wide and 20&nbsp;mm thick. Then I added a recessed GUS on the back. <span class="todo">TODO: what software did you edit it in (Onshape, SolidWorks, etc.)?</span></p>
+      <p>The stand has a slot in the middle of the front lip and an opening in the back, so the charging cable can run under the phone and plug into the bottom. <span class="todo">TODO: confirm how the charger works &mdash; USB-C cable through the slot? Wireless?</span></p>
+      <div class="img-wrap">
+        <img src="images/P4_front.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Front of the gray phone stand with a lip along the bottom and a slot in the middle for the charging cable" style="width:100%;max-width:440px;display:block;">
+        <div class="img-caption">Fig 2. The front of the stand. The slot in the middle of the lip is for the charging cable. Click to enlarge.</div>
+      </div>
+
+      <h2>Print</h2>
+      <p>I printed it in PLA with 20% infill, since a phone stand needs to be sturdy, and organic supports painted on where Weston suggested. The print worked the first time and was pretty painless.</p>
+      <div class="goal-row">
+        <div class="goal-cell">
+          <div class="goal-label">Settings</div>
+          <div class="goal-body">PLA, 20% infill<br>Organic supports</div>
+        </div>
+        <div class="goal-cell">
+          <div class="goal-label">Filament Used</div>
+          <div class="goal-body"><span class="todo">TODO: grams / meters</span></div>
+        </div>
+        <div class="goal-cell">
+          <div class="goal-label">Cost</div>
+          <div class="goal-body"><span class="todo">TODO: $</span></div>
+        </div>
+      </div>
+      <p><span class="todo">TODO: which printer (Prusa or Ultimaker), print time, and layer height.</span></p>
+
+      <h2>Time Log</h2>
+      <table class="log-table">
+        <thead><tr><th>When</th><th>Step</th><th>Activity &amp; Reflection</th></tr></thead>
+        <tbody>
+          <tr><td>TODO</td><td>Calibration cube</td><td><span class="log-where">In class</span><span class="todo">TODO</span></td></tr>
+          <tr><td>TODO</td><td>Research</td><td><span class="log-where">TODO</span>Found the stand on GrabCAD and read up on infill and organic supports.</td></tr>
+          <tr><td>TODO</td><td>Design</td><td><span class="log-where">TODO</span>Resized the model to fit my phone (80&nbsp;mm wide, 20&nbsp;mm thick) and added the recessed GUS.</td></tr>
+          <tr><td>TODO</td><td>Print</td><td><span class="log-where">TODO</span>Sliced with 20% infill and painted organic supports, then printed. It worked the first time.</td></tr>
+          <tr><td>Nov. 3</td><td>Delivered</td><td><span class="log-where">In class</span>Brought the stand to class to demo it charging my phone.</td></tr>
+        </tbody>
+      </table>
+      <p><span class="todo">TODO: hours for each step and total.</span></p>
+
+      <h2>Reflection</h2>
+      <p><span class="todo">TODO: what did you learn, and was it valuable? Starting points: STEP vs. STL, organic supports, picking infill, how it was to print something that worked the first time.</span></p>
+
+      <h2>Final Display</h2>
+      <p><span class="todo">TODO: a photo of the stand holding your phone while it charges.</span></p>
       <footer>&copy; Digital Notebook &mdash; Gus &mdash; 2026</footer>
     </div>
 
