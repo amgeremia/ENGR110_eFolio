@@ -147,7 +147,6 @@
     .log-table td:first-child { font-family: var(--mono); font-size: 0.7em; white-space: nowrap; color: var(--mid); }
     .log-table td:nth-child(2) { font-family: var(--mono); font-size: 0.7em; white-space: nowrap; }
     .log-table .log-where { display: block; font-family: var(--mono); font-size: 0.66em; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); margin-bottom: 2px; }
-    .todo { background: #fff3b0; color: #6b5400; font-family: var(--mono); font-size: 0.78em; padding: 1px 5px; border-radius: 2px; }
 
     /* Archive (folded in sidebar) */
     .nav-archive summary {
@@ -423,91 +422,101 @@
     <div class="page" id="p3">
       <h1>2D to 3D &mdash; Bluetooth Speaker Enclosure</h1>
       <div class="report-meta">Project 03 &nbsp;&mdash;&nbsp; Engr 2 &nbsp;&mdash;&nbsp; Laser cutter + &#8539;&Prime; plywood</div>
-      <p class="home-lede" style="margin-top:0;">I took apart an Anker Soundcore 2 Bluetooth speaker and built it a new laser-cut plywood box, with a rastered picture on the front.</p>
+      <p class="home-lede" style="margin-top:0;">I took apart an Anker Soundcore 2 Bluetooth speaker and built it a new laser-cut plywood box, with a rastered swan on the front.</p>
 
       <div class="img-wrap">
         <img src="images/P3_front.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Front of the plywood speaker box with two black drivers and a rastered swan between them" style="width:100%;max-width:520px;display:block;">
         <div class="img-caption">Fig 1. The finished speaker. Two drivers on the front with a rastered swan below them. Click to enlarge.</div>
       </div>
 
-      <p>This page goes through the project in order. First is what I made and why, then my pitch, the teardown of the original speaker, my measurements, and the design in MakerCase. After that is the build, my time log, a reflection, and photos of the finished speaker from each side.</p>
+      <p>This page goes through the project in order. First is what I made and why, then my pitch, the research I did, and the teardown of the original speaker. After that is my prototype, the measurements and design, the build, my time log, a reflection, and photos of the finished speaker.</p>
 
       <h2>Overview</h2>
-      <p>The goal of Project 3 was to make a 3D object out of flat &#8539;&Prime; plywood on the laser cutter, with a rastered element somewhere on it. I wanted to make something useful, so I picked a speaker. I took the electronics out of an old Bluetooth speaker and designed a wooden box to hold the board, the drivers, and the rest of the parts. <span class="todo">TODO: why a speaker? e.g., was it an old speaker you had lying around?</span></p>
-      <p>Most of the work was measuring. I measured every part with calipers and planned where each one would sit so I could cut the whole box in one go and have it all fit the first time.</p>
+      <p>The goal of Project 3 was to make a 3D object out of flat &#8539;&Prime; plywood on the laser cutter, with a rastered element on it. I decided to take the electronics out of a Bluetooth speaker and design a new wooden box to hold the board, the drivers, and the battery.</p>
+      <p>Most of the work was measuring. I measured every part with calipers and planned where each one would sit, so I could cut the whole box in one go and have everything fit the first time.</p>
 
       <h2>Project Pitch &mdash; Oct. 13</h2>
-      <p><span class="todo">TODO: what did you pitch in class? Same idea as the final, or did it change? Any sketches or feedback?</span></p>
+      <p>In class I pitched building a new enclosure for a Bluetooth speaker. Not much changed from the pitch to the final project. The main difference was time: it took longer than I planned for in my timeline.</p>
 
       <h2>Research</h2>
       <p>The original speaker is an <a href="https://www.androidheadlines.com/2017/05/anker-soundcore-2-portable-bluetooth-speaker-review.html" target="_blank">Anker Soundcore 2</a>, a small portable speaker that's rated IPX7 waterproof. That waterproofing is why it was so hard to open, since everything inside is sealed and glued together.</p>
-      <p>To design the box I used <a href="https://en.makercase.com/" target="_blank">MakerCase</a>, a free website that generates the flat pieces for a box with finger joints from the dimensions and material thickness you give it. Since the laser burns away a thin line of material as it cuts (called the <a href="https://makezine.com/2018/12/31/accounting-for-kerf-how-much-material-is-really-removed-by-your-cutter" target="_blank">kerf</a>), I also read up on how that affects how tight finger joints fit. <span class="todo">TODO: did you set a kerf value in MakerCase? Finger joints or glue?</span></p>
+      <p>To design the box I used <a href="https://en.makercase.com/" target="_blank">MakerCase</a>, a free website that generates the flat pieces of a finger-jointed box from the dimensions and material thickness you give it. I also read up on <a href="https://makezine.com/2018/12/31/accounting-for-kerf-how-much-material-is-really-removed-by-your-cutter" target="_blank">kerf</a>, the thin line of material the laser burns away as it cuts, since it affects how tight the finger joints fit. I added the cutouts and the swan in <a href="https://www.coreldraw.com/" target="_blank">CorelDRAW</a>.</p>
 
       <h2>Teardown</h2>
-      <p>Getting the speaker apart was the hardest part of the whole project. Because it's waterproof, everything was glued. I had to pry off the front grill, take out 8 screws, and use a Dremel to cut through the thick rubber casing.</p>
-      <p>I left out two parts. What I think is the low-end driver was fused to the front baffle, so I couldn't get it out without breaking it. The microphone was stuck the same way. Both are still in the original front baffle in Fig 2.</p>
+      <p>Getting the speaker apart was the hardest part of the whole project. Because it's waterproof, everything was glued. I had to pry off the front grill, take out 8 screws, and use a Dremel to cut through the thick rubber casing. Fig 3 shows what was left of the case afterward.</p>
+      <div class="img-pair">
+        <div>
+          <img src="images/P3_electronics.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Speaker circuit board with two drivers attached and a blue lithium-ion battery on a wooden table" style="width:100%;display:block;">
+          <div class="img-caption">Fig 2. The parts I kept: the board, two drivers, and the battery.</div>
+        </div>
+        <div>
+          <img src="images/P3_remnants.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Cut-open black rubber speaker case and gasket surrounded by rubber scraps and Dremel dust" style="width:100%;display:block;">
+          <div class="img-caption">Fig 3. What was left of the original case after the Dremel.</div>
+        </div>
+      </div>
+      <p>I left out two parts. What I think is the low-end driver was fused to the front baffle, so I couldn't get it out without breaking it. The microphone was stuck the same way. Both are still in the original baffle in Fig 4.</p>
       <div class="img-wrap">
         <img src="images/P3_original_baffle.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Original black plastic front baffle from the Soundcore 2 with two empty driver holes, a rectangular membrane in the middle, and a small round microphone" style="width:100%;max-width:440px;display:block;">
-        <div class="img-caption">Fig 2. The original front baffle. The two round holes held the drivers I reused. The rectangle in the middle is the part I think is the low-end driver, and the small circle to its lower right is the microphone. Click to enlarge.</div>
+        <div class="img-caption">Fig 4. The original front baffle. The two round holes held the drivers I reused. The rectangle in the middle is what I think is the low-end driver, and the small circle to its lower right is the microphone. Click to enlarge.</div>
       </div>
 
-      <h2>Measurements</h2>
-      <p>I measured the board, each driver, and the rest of the parts with calipers. From those numbers I worked out the inside size of the box and where each hole needed to go: the two driver openings with four screw holes each, five slots on top for the buttons, and a long slot on the side for the port.</p>
+      <h2>Prototype</h2>
+      <p>Before cutting the full box, I cut a set of baffle mounting plates for the drivers to check that the hole diameter and the screw locations were right. They fit, so I knew my driver measurements were good. The plan was to use the plates in the final box too, but they pulled the drivers further back from the front panel than I wanted, so I mounted the drivers straight to the front panel instead.</p>
+
+      <h2>Measurements &amp; Design</h2>
+      <p>I measured the board, each driver, the battery, and the button and port locations with calipers. From those numbers I worked out the inside size of the box and where each hole needed to go: two driver openings with four screw holes each, five slots on top for the buttons, and a long slot on the side for the port.</p>
+      <p>I generated the box in MakerCase, then brought the pieces into CorelDRAW to add the cutouts and the swan. I picked the swan because I like the image, and I had already worked on it before to make custom cards, so it was ready to go.</p>
       <div class="goal-row">
         <div class="goal-cell">
-          <div class="goal-label">Box Size</div>
-          <div class="goal-body"><span class="todo">TODO: W &times; H &times; D</span></div>
+          <div class="goal-label">Raster (Swan)</div>
+          <div class="goal-body">100% speed<br>25% power</div>
+        </div>
+        <div class="goal-cell">
+          <div class="goal-label">Cut</div>
+          <div class="goal-body">30% speed<br>100% power</div>
         </div>
         <div class="goal-cell">
           <div class="goal-label">Material</div>
-          <div class="goal-body">&#8539;&Prime; plywood<br><span class="todo">TODO: stained or unstained?</span></div>
-        </div>
-        <div class="goal-cell">
-          <div class="goal-label">Joints</div>
-          <div class="goal-body"><span class="todo">TODO: press fit, glue, or both</span></div>
+          <div class="goal-body">&#8539;&Prime; plywood<br>Finger joints</div>
         </div>
       </div>
+      <p>The cut settings were the same ones I used for acrylic in Project 2. I turned the raster power down from 30% to 25% for the plywood.</p>
 
-      <h2>Design &amp; Build</h2>
-      <p>I made the box in MakerCase, downloaded the flat pieces, and added the cutouts for the parts and the rastered picture for the front. <span class="todo">TODO: what software did you add the cutouts in? Why the swan? Laser settings for the cut and the raster?</span></p>
-      <p>Since I wanted to cut it all in one shot, I checked every cutout against my measurements before sending it to the laser. <span class="todo">TODO: did it fit the first time? Anything you had to fix, sand, or recut?</span></p>
-      <p><span class="todo">TODO: any proof-of-concept prototype from the first class? A test cut of a corner or a cutout?</span></p>
+      <h2>Build</h2>
+      <p>Because I measured everything so carefully, the whole box fit on the first cut. The drivers lined up with their holes, the screw holes matched, and the slots lined up with the buttons and the port.</p>
+      <p>One thing didn't go to plan. I meant to cut small plywood pieces that would drop into the button slots and press the buttons on the board. During the cut, those small pieces fell through the grate of the laser cutter, and I didn't know I could get them back. Now I use a thin tool to press the buttons through the slots.</p>
 
+      <h2>Time Log</h2>
+      <p>The project took about 3 hours total, and most of that was measuring and design.</p>
+      <table class="log-table">
+        <thead><tr><th>When</th><th>Step</th><th>Activity &amp; Reflection</th></tr></thead>
+        <tbody>
+          <tr><td>Oct. 13</td><td>Pitch</td><td><span class="log-where">In class</span>Pitched a new enclosure for a Bluetooth speaker. The idea stayed the same through the project.</td></tr>
+          <tr><td>Before build</td><td>Teardown</td><td>Pried off the grill, removed 8 screws, and cut away the rubber casing with a Dremel to get the board, drivers, and battery out.</td></tr>
+          <tr><td>Work days</td><td>Prototype</td><td>Cut the driver mounting plates to check the hole size and screw locations. They fit, but I left them out of the final box because they set the drivers too far back.</td></tr>
+          <tr><td>Work days</td><td>Measure &amp; design</td><td>Measured every part with calipers, made the box in MakerCase, and added the cutouts and swan in CorelDRAW. This was most of my time.</td></tr>
+          <tr><td>Work days</td><td>Cut &amp; build</td><td>Cut the box in one go and put the electronics in. Everything fit, but the button pieces fell through the laser grate.</td></tr>
+          <tr><td>Oct. 27</td><td>Delivered</td><td><span class="log-where">In class</span>Brought the finished speaker to class.</td></tr>
+        </tbody>
+      </table>
+      <p>Total: about 3 hours. The in-class work days were Oct. 15, 20, and 22.</p>
+
+      <h2>Reflection</h2>
+      <p>The biggest thing I learned is how much careful measuring saves you. I spent most of my time with the calipers, and because of that I only had to cut the box once. Cutting the mounting plates first was also worth it, because it checked my driver measurements on a small, cheap piece before I cut the whole box.</p>
+      <p>I also learned a lot from taking the speaker apart. Waterproof products are built to stay closed, so getting the parts out took a lot more force than I expected, and I had to leave two parts behind.</p>
+      <p>The speaker plays, and I think it sounds good. It would sound better with the extra driver, and if the box was airtight. I didn't seal the port or the button slots, and losing the button pieces left those holes open. Next time I'd plan for the extra driver, seal the box, and catch small parts before they fall through the grate.</p>
+
+      <h2>Final Display</h2>
+      <p>Here's the finished speaker. The front has the two drivers and the rastered swan (Fig 1). The top has five slots for the buttons, and the side has a slot for the port. The whole box is held together with the finger joints from MakerCase.</p>
       <div class="img-pair">
         <div>
           <img src="images/P3_top_buttons.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Top of the speaker box with five small rectangular slots for the buttons" style="width:100%;display:block;">
-          <div class="img-caption">Fig 3a. Top: five slots line up with the original buttons.</div>
+          <div class="img-caption">Fig 5a. Top: five slots line up with the buttons on the board.</div>
         </div>
         <div>
           <img src="images/P3_side_port.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="End of the speaker box with one long slot near the edge" style="width:100%;display:block;">
-          <div class="img-caption">Fig 3b. Side: one long slot for the port.</div>
+          <div class="img-caption">Fig 5b. Side: one long slot for the port.</div>
         </div>
-      </div>
-
-      <h2>Time Log</h2>
-      <table class="log-table">
-        <thead><tr><th>Date</th><th>Time</th><th>Activity &amp; Reflection</th></tr></thead>
-        <tbody>
-          <tr><td>Oct. 13</td><td>TODO</td><td><span class="log-where">In class</span>Pitched the project. <span class="todo">TODO</span></td></tr>
-          <tr><td>TODO</td><td>TODO</td><td><span class="log-where">Outside class</span>Took apart the speaker: pried off the grill, removed 8 screws, and cut the rubber casing with a Dremel.</td></tr>
-          <tr><td>Oct. 15</td><td>TODO</td><td><span class="log-where">In class</span><span class="todo">TODO</span></td></tr>
-          <tr><td>Oct. 20</td><td>TODO</td><td><span class="log-where">In class</span><span class="todo">TODO</span></td></tr>
-          <tr><td>Oct. 22</td><td>TODO</td><td><span class="log-where">In class</span><span class="todo">TODO</span></td></tr>
-          <tr><td>TODO</td><td>TODO</td><td><span class="log-where">Outside class</span>Measured all the parts with calipers and designed the box in MakerCase.</td></tr>
-          <tr><td>TODO</td><td>TODO</td><td><span class="log-where">TODO</span>Cut the box, assembled it, and put the electronics in.</td></tr>
-          <tr><td>Oct. 27</td><td>&mdash;</td><td><span class="log-where">In class</span>Brought the finished speaker to class.</td></tr>
-        </tbody>
-      </table>
-      <p><span class="todo">TODO: total hours</span></p>
-
-      <h2>Reflection</h2>
-      <p><span class="todo">TODO: what did you learn, and was it valuable? A few starting points: how hard the teardown was, measuring everything so it fit in one cut, using MakerCase, and what you'd change next time.</span></p>
-
-      <h2>Final Display</h2>
-      <p>Here's the finished speaker. The front has the two drivers and the rastered swan (Fig 1). The top has five slots for the buttons (Fig 3a), and the side has a slot for the port (Fig 3b). The whole box is held together with finger joints from MakerCase. <span class="todo">TODO: does it play? How does it sound compared to the original?</span></p>
-      <div class="img-wrap">
-        <img src="images/P3_front.jpg" class="lightbox-thumb" onclick="openLB(this.src)" alt="Front of the finished plywood speaker box with two drivers and a rastered swan" style="width:100%;max-width:520px;display:block;">
-        <div class="img-caption">Fig 4. Front of the finished speaker. Click to enlarge.</div>
       </div>
       <footer>&copy; Digital Notebook &mdash; Gus &mdash; 2026</footer>
     </div>
