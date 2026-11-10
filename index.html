@@ -179,7 +179,7 @@
     .pcard .desc { font-size: 15px; color: var(--body); margin-top: 8px; max-width: 46ch; }
     .pcard .go { width: 46px; height: 46px; flex-shrink: 0; border-radius: var(--r-sm); background: var(--c-deep); color: #fff; display: grid; place-items: center; font-size: 19px; transition: transform .3s var(--ease); }
     .pcard:hover .go { transform: translateX(4px); }
-    .pcard.soon .ph { display: grid; place-items: center; height: clamp(180px, 16vw, 240px); background: color-mix(in srgb, var(--c) 45%, var(--paper)); }
+    .pcard.soon .ph { flex: 1; min-height: 180px; display: grid; place-items: center; height: clamp(180px, 16vw, 240px); background: color-mix(in srgb, var(--c) 45%, var(--paper)); }
     .pcard.soon .ph span { font: 500 clamp(5rem, 10vw, 9rem)/1 var(--display); letter-spacing: -0.05em; color: var(--c-deep); opacity: .45; }
 
     /* oat panel holding near-white cards (clay.com logo/testimonial band) */
@@ -279,6 +279,107 @@
     .toc a.on::before { background: var(--c-deep); transform: scale(1.3); }
     .toc .bar { height: 3px; border-radius: 3px; background: var(--oat); margin-top: 16px; overflow: hidden; }
     .toc .bar i { display: block; height: 100%; width: 0; background: var(--c-deep); transition: width .1s linear; }
+
+    /* ── Pitch deck (1600×900 slides, scaled with zoom so page + present mode match) ── */
+    .deck { display: grid; gap: 20px; margin: 28px 0 8px; }
+    .deck-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .deck-title { display: flex; align-items: center; gap: 4px; }
+    .deck-title .rest { font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+    .deck-actions { display: flex; gap: 8px; }
+    .slide-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--r-xl); overflow: hidden; background: var(--c-tint); box-shadow: inset 0 0 0 1px rgba(0,0,0,.04); }
+    .slide { position: absolute; left: 0; top: 0; width: 1600px; height: 900px; zoom: var(--z, .5); padding: 72px 80px; color: var(--ink); font-size: 26px; line-height: 1.45; }
+    .slide p { color: var(--body); margin: 0; }
+    .slide .eyebrow { margin-bottom: 26px; }
+    .slide .pill { height: 38px; padding: 0 18px; font-size: 15px; }
+    .slide .eyebrow .rest { font-size: 15px; }
+    .s-h1 { font: 500 116px/0.95 var(--display); letter-spacing: -0.045em; margin: 0 0 30px; }
+    .s-h2 { font: 500 76px/1.0 var(--display); letter-spacing: -0.04em; margin: 0 0 34px; }
+    .s-h1 .accent, .s-h2 .accent { color: var(--c-deep); display: block; }
+    .s-lede { font-size: 31px; line-height: 1.4; max-width: 680px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+    .chip { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 20px; border-radius: 14px; background: var(--paper); font-size: 21px; font-weight: 500; box-shadow: 0 1px 0 rgba(0,0,0,.04); }
+    .chip i { width: 12px; height: 12px; border-radius: 50%; }
+    .s-credit { position: absolute; left: 80px; bottom: 56px; font-size: 17px !important; color: var(--muted) !important; }
+
+    .s-cover { display: grid; grid-template-columns: 1fr 560px; gap: 40px; align-items: center; }
+    .s-model { position: relative; height: 820px; margin: -40px -40px -40px 0; border-radius: 32px; background: radial-gradient(60% 50% at 50% 55%, #ffffff 0%, rgba(255,255,255,0) 70%); }
+    .s-model model-viewer { width: 100%; height: 100%; --poster-color: transparent; background: transparent; }
+    .s-hint { position: absolute; right: 24px; top: 40px; background: rgba(255,255,255,.9); border-radius: 12px; padding: 8px 16px; font-size: 17px; font-weight: 500; color: var(--stone); pointer-events: none; }
+
+    .s-idea { display: grid; grid-template-columns: 1fr 720px; gap: 56px; }
+    .s-list { list-style: none; margin: 0 0 34px; padding: 0; display: grid; gap: 16px; }
+    .s-list li { position: relative; padding-left: 34px; color: var(--body); margin: 0; }
+    .s-list li::before { content: ''; position: absolute; left: 0; top: 13px; width: 14px; height: 14px; border-radius: 50%; background: var(--c-deep); }
+    .s-list b { color: var(--ink); font-weight: 600; }
+    .s-why { background: var(--paper); border-radius: 26px; padding: 28px 32px; }
+    .s-why .k, .budget .k { font-size: 15px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--c-deep); margin-bottom: 10px; }
+    .facts { display: flex; gap: 10px; margin-top: 18px; }
+    .facts span { background: var(--oat); border-radius: 12px; padding: 8px 16px; font: 500 20px var(--display); }
+    .s-collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; height: 828px; margin: -36px -44px -36px 0; }
+    .s-collage figure { position: relative; border-radius: 24px; overflow: hidden; background: var(--oat); min-height: 0; }
+    .s-collage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .s-collage figcaption { position: absolute; left: 14px; bottom: 14px; background: rgba(255,255,255,.94); border-radius: 12px; padding: 7px 14px; font-size: 17px; font-weight: 600; }
+    .s-collage .c1 { grid-row: 1 / 3; }
+    .s-collage .c2 img { object-position: 50% 30%; }
+    .s-collage .c3 { display: none; }
+    .s-collage .dogs { background: var(--paper); display: flex; flex-direction: column; }
+    .s-collage .dogs img { position: static; flex: 1; min-height: 0; object-fit: contain; padding: 20px 20px 0; mix-blend-mode: multiply; }
+    .s-collage .dogs figcaption { position: static; background: none; font-weight: 400; font-size: 17px; line-height: 1.35; color: var(--body); padding: 6px 20px 18px; }
+    .s-collage .dogs b { color: var(--ink); }
+
+    .s-tools { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto 1fr auto; gap: 18px 22px; }
+    .s-top { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: flex-start; }
+    .s-top .s-h2 { margin: 0; }
+    .s-diagram { width: 160px; height: 224px; margin: -36px 20px -10px 0; }
+    .s-cards { display: contents; }
+    .mcard { background: var(--paper); border-radius: 26px; padding: 26px 28px; display: flex; flex-direction: column; border-top: 8px solid var(--m); }
+    .mcard .pill { --c-deep: var(--m); }
+    .mh { display: flex; align-items: center; margin-bottom: 18px; }
+    .mt { font-size: 17px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .mw { font: 500 30px/1.22 var(--display) !important; letter-spacing: -0.02em; color: var(--ink) !important; margin-bottom: 20px !important; }
+    .mcard dl { margin-top: auto; display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; font-size: 20px; padding-top: 16px; border-top: 1px solid var(--hairline); }
+    .mcard dt { color: var(--muted); }
+    .mcard dd { margin: 0; color: var(--ink); font-weight: 500; }
+    .s-strip { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr auto; gap: 28px; background: var(--paper); border-radius: 22px; padding: 20px 28px; font-size: 20px; color: var(--body); }
+    .s-strip b { color: var(--ink); }
+
+    .s-plan { display: grid; grid-template-columns: 1fr 470px; grid-template-rows: auto 1fr; gap: 10px 40px; }
+    .s-head { grid-column: 1 / -1; }
+    .s-head .s-h2 { margin-bottom: 18px; }
+    .s-head .s-h2 .accent { display: inline; }
+    .gantt { background: var(--paper); border-radius: 26px; padding: 22px 26px; font-size: 19px; }
+    .g-row { display: grid; grid-template-columns: 300px repeat(4, 1fr) 96px; align-items: center; min-height: 46px; border-top: 1px solid var(--hairline); }
+    .g-row > span:first-child { color: var(--ink); padding-right: 12px; }
+    .g-row i { grid-column: calc(var(--a) + 1) / calc(var(--b) + 1); grid-row: 1; height: 22px; border-radius: 8px; background: var(--m); margin: 0 3px; }
+    .g-row .h { grid-column: 6; grid-row: 1; text-align: right; font: 500 21px var(--display); }
+    .g-row .h small { display: block; font: 400 13px var(--sans); color: var(--muted); }
+    .g-head { border-top: 0; min-height: 0; padding-bottom: 10px; font-size: 16px; font-weight: 600; color: var(--ink); }
+    .g-head small { font-weight: 400; color: var(--muted); font-size: 14px; }
+    .g-head span:last-child { text-align: right; }
+    .g-note { font-size: 17px !important; color: var(--muted) !important; margin-top: 12px !important; }
+    .budget { background: var(--paper); border-radius: 26px; padding: 24px 28px; }
+    .budget table { width: 100%; border-collapse: collapse; font-size: 19px; }
+    .budget td { padding: 9px 0; border-top: 1px solid var(--hairline); vertical-align: top; }
+    .budget td:last-child { text-align: right; font: 500 21px var(--display); white-space: nowrap; padding-left: 12px; }
+    .budget small { display: block; color: var(--muted); font-size: 15px; }
+    .budget .tot td { border-top: 2px solid var(--ink); font: 600 26px var(--display); padding-top: 14px; }
+
+    /* present mode */
+    .present-ui { display: none; }
+    .deck.presenting { position: fixed; inset: 0; z-index: 2000; margin: 0; background: #0b0b0a; display: grid; place-items: center; max-width: none !important; }
+    .deck.presenting .deck-bar { display: none; }
+    .deck.presenting .slide-frame { display: none; width: min(100vw, calc(100vh * 16 / 9)); border-radius: 0; }
+    .deck.presenting .slide-frame.cur { display: block; grid-area: 1 / 1; }
+    .deck.presenting .present-ui { display: flex; position: fixed; right: 18px; bottom: 18px; align-items: center; gap: 6px; background: rgba(255,255,255,.12); backdrop-filter: blur(8px); border-radius: 14px; padding: 6px; color: #fff; font-size: 14px; opacity: .25; transition: opacity .25s; z-index: 5; }
+    .deck.presenting .present-ui:hover { opacity: 1; }
+    .present-ui button { height: 36px; min-width: 36px; padding: 0 10px; border: 0; border-radius: 10px; background: rgba(255,255,255,.14); color: #fff; font: 500 14px var(--sans); cursor: pointer; }
+    .present-ui .count { padding: 0 8px; font-variant-numeric: tabular-nums; }
+    .present-ui small { opacity: .6; }
+    body.no-scroll { overflow: hidden; }
+    @media (max-width: 760px) {
+      .deck-actions .btn { height: 40px; padding: 0 14px; }
+      .slide-frame { border-radius: 18px; }
+    }
 
     /* ── Lightbox ── */
     #lightbox { display: none; position: fixed; inset: 0; background: rgba(11,11,10,.9); z-index: 1000; align-items: center; justify-content: center; }
@@ -399,8 +500,8 @@
         <a class="pcard w7" href="#p2" style="--c:var(--teal);--c-deep:#1f5c58;--c-tint:#e9f2f1"><div class="ph"><img src="images/P2_v3_lit.jpg" alt="Acrylic LED Sign" loading="lazy"></div><div class="meta"><div><span class="pill">Project 02</span><div class="title">Acrylic LED Sign</div><div class="desc">An edge-lit Narnia lamppost, three versions deep.</div></div><span class="go">&rarr;</span></div></a>
         <a class="pcard w7" href="#p3" style="--c:var(--peach);--c-deep:#c4501c;--c-tint:#fff1e8"><div class="ph"><img src="images/P3_front.jpg" alt="2D to 3D" loading="lazy"></div><div class="meta"><div><span class="pill">Project 03</span><div class="title">2D to 3D</div><div class="desc">A Bluetooth speaker rehoused in laser-cut plywood.</div></div><span class="go">&rarr;</span></div></a>
         <a class="pcard w5" href="#p4" style="--c:var(--lavender);--c-deep:#5b3fc9;--c-tint:#f3effd"><div class="ph"><img src="images/P4_charging.jpg" alt="Phone Stand" loading="lazy"></div><div class="meta"><div><span class="pill">Project 04</span><div class="title">Phone Stand</div><div class="desc">A 3D-printed charging stand sized to my phone.</div></div><span class="go">&rarr;</span></div></a>
-        <a class="pcard w6 soon" href="#p5" style="--c:var(--pink);--c-deep:#cc1f5f;--c-tint:#ffeef4"><div class="ph"><span>05</span></div><div class="meta"><div><span class="pill">Project 05</span><div class="title">Name Plate</div><div class="desc">Coming soon.</div></div><span class="go">&rarr;</span></div></a>
-        <a class="pcard w6 soon" href="#p6" style="--c:var(--mint);--c-deep:#2a7a64;--c-tint:#ebf6f2"><div class="ph"><span>06</span></div><div class="meta"><div><span class="pill">Project 06</span><div class="title">Final Project</div><div class="desc">Coming soon.</div></div><span class="go">&rarr;</span></div></a>
+        <a class="pcard w5 soon" href="#p5" style="--c:var(--pink);--c-deep:#cc1f5f;--c-tint:#ffeef4"><div class="ph"><span>05</span></div><div class="meta"><div><span class="pill">Project 05</span><div class="title">Name Plate</div><div class="desc">Coming soon.</div></div><span class="go">&rarr;</span></div></a>
+        <a class="pcard w7" href="#p6" style="--c:var(--mint);--c-deep:#2a7a64;--c-tint:#ebf6f2"><div class="ph"><img src="images/P6_street.jpg" alt="Final Project" loading="lazy"></div><div class="meta"><div><span class="pill">Project 06</span><div class="title">Final Project</div><div class="desc">Transamerica Pyramid lamp — pitch, plan and live 3D model.</div></div><span class="go">&rarr;</span></div></a>
       </div>
 
       <div class="section-head" style="margin-top:120px"><h2>From the archive</h2><p>Engr 110 &middot; Spring 2026 &middot; Team project</p></div>
@@ -773,14 +874,151 @@
 
     <!-- PROJECT 06 -->
     <div class="page proj" id="p6" style="--c:var(--mint);--c-deep:#2a7a64;--c-tint:#ebf6f2">
-      <header class="proj-hero no-img">
+      <header class="proj-hero">
         <div class="txt">
-          <div class="eyebrow"><span class="pill">Project 06</span><span class="rest">Engr 2</span></div>
-          <h1>Final Project</h1>
-          <p class="soon-note">Write-up in progress &mdash; check back soon.</p>
+          <div class="eyebrow"><span class="pill">Project 06</span><span class="rest">Engr 2 &middot; Prusa + Epilog + Carvey</span></div>
+          <h1>Final Project<br><span class="accent">Transamerica Pyramid Lamp</span></h1>
+          <p class="home-lede">An 18-inch scale model of San Francisco&rsquo;s Transamerica Pyramid in PLA and plywood &mdash; and it lights up from inside. Pitched Nov 10, delivered Dec 3.</p>
         </div>
+        <figure><img src="images/P6_street.jpg" alt="The Transamerica Pyramid against a bright blue sky, seen down a San Francisco street" onclick="openLB(this.src)"><figcaption>Fig 1. The Transamerica Pyramid &mdash; reference photo.</figcaption></figure>
       </header>
 
+      <h2>The pitch</h2>
+      <p>Four slides: the idea, the machines, and the plan. Press <strong>Present</strong> for full screen and use the arrow keys, or scroll through them here. The model on the first slide is live &mdash; drag it to look around.</p>
+
+      <section class="deck wide" id="deck" aria-label="Final project pitch slides">
+        <div class="deck-bar">
+          <div class="deck-title"><span class="pill">Pitch</span><span class="rest">4 slides &middot; Nov 10, 2026</span></div>
+          <div class="deck-actions">
+            <a class="btn btn-ghost" href="files/Final_Project_Pitch_Gus.pdf" download>PDF <span class="arr">&darr;</span></a>
+            <button class="btn btn-primary" type="button" id="present-btn">Present <span class="arr">&#9654;</span></button>
+          </div>
+        </div>
+
+        <!-- Slide 0: cover -->
+        <div class="slide-frame"><div class="slide s-cover">
+          <div class="s-left">
+            <div class="eyebrow"><span class="pill">Final project</span><span class="rest">Engr 2 &middot; Gus &middot; Fall 2026</span></div>
+            <h3 class="s-h1">Transamerica Pyramid <span class="accent">Lamp</span></h3>
+            <p class="s-lede">An 18-inch PLA and plywood scale model of San Francisco&rsquo;s pyramid that lights up from the inside.</p>
+            <div class="chips">
+              <span class="chip"><i style="background:#5b3fc9"></i>Prusa 3D printer</span>
+              <span class="chip"><i style="background:#c4501c"></i>Epilog laser cutter</span>
+              <span class="chip"><i style="background:#1f5c58"></i>Carvey CNC mill</span>
+            </div>
+            <p class="s-credit">3D model: &ldquo;Transamerica Pyramid&rdquo; by seppi, SketchUp 3D Warehouse.</p>
+          </div>
+          <div class="s-model">
+            <model-viewer data-src="models/pyramid.glb" loading="eager" reveal="auto" alt="3D model of the Transamerica Pyramid" camera-controls disable-zoom auto-rotate auto-rotate-delay="0" rotation-per-second="18deg" interaction-prompt="none" shadow-intensity="0.9" shadow-softness="0.8" exposure="0.9" tone-mapping="neutral" environment-image="neutral" camera-orbit="-45deg 80deg auto" field-of-view="26deg"></model-viewer>
+            <span class="s-hint">Drag to rotate</span>
+          </div>
+        </div></div>
+
+        <!-- Slide 1: idea + why -->
+        <div class="slide-frame"><div class="slide s-idea">
+          <div class="s-left">
+            <div class="eyebrow"><span class="pill">01 &middot; The idea</span></div>
+            <h3 class="s-h2">A scale model <span class="accent">that&rsquo;s also a lamp</span></h3>
+            <ul class="s-list">
+              <li><b>18 in tall</b> &mdash; about 1:570 scale of the 853&nbsp;ft tower.</li>
+              <li><b>Glows from inside:</b> an LED light shines through laser-cut windows backed with frosted acrylic.</li>
+              <li><b>Stands on its own block:</b> a printed truss foundation set into a carved street-corner base.</li>
+            </ul>
+            <div class="s-why">
+              <div class="k">Why this one?</div>
+              <p>I just like it. It&rsquo;s a beautiful building, and the engineering is cool &mdash; that taper, and the truss base it all stands on.</p>
+              <div class="facts"><span>48 floors</span><span>3,678 windows</span><span>Finished 1972</span></div>
+            </div>
+          </div>
+          <div class="s-collage">
+            <figure class="c1"><img src="images/P6_construction.jpg" alt="The pyramid under construction, steel frame at the top"><figcaption>Going up</figcaption></figure>
+            <figure class="c2"><img src="images/P6_aerial.jpg" alt="Aerial view looking down the spire"><figcaption>From above</figcaption></figure>
+            <figure class="c3"><img src="images/P6_crown.jpg" alt="The spire and the two side wings"><figcaption>The crown</figcaption></figure>
+            <figure class="c4 dogs"><img src="images/P6_bummer_lazarus.jpg" alt="Engraving of two dogs, Bummer and Lazarus"><figcaption><b>Bummer &amp; Lazarus</b>, San Francisco&rsquo;s famous 1860s stray dogs, have a plaque in Redwood Park at the pyramid&rsquo;s foot.</figcaption></figure>
+          </div>
+        </div></div>
+
+        <!-- Slide 2: tools + breakdown -->
+        <div class="slide-frame"><div class="slide s-tools">
+          <div class="s-top">
+            <div><div class="eyebrow"><span class="pill">02 &middot; Tools &amp; breakdown</span></div>
+            <h3 class="s-h2">Three machines, <span class="accent">one building</span></h3></div>
+            <svg class="s-diagram" viewBox="0 0 300 420" aria-label="Exploded view: spire, walls, foundation, base">
+              <polygon points="150,8 136,92 164,92" fill="#f3effd" stroke="#5b3fc9" stroke-width="2.5"/>
+              <polygon points="134,104 166,104 214,300 86,300" fill="#fff1e8" stroke="#c4501c" stroke-width="2.5"/>
+              <g stroke="#c4501c" stroke-width="1.6" opacity=".55">
+                <line x1="128" y1="130" x2="172" y2="130"/><line x1="122" y1="156" x2="178" y2="156"/><line x1="116" y1="182" x2="184" y2="182"/><line x1="110" y1="208" x2="190" y2="208"/><line x1="104" y1="234" x2="196" y2="234"/><line x1="98" y1="260" x2="202" y2="260"/><line x1="92" y1="284" x2="208" y2="284"/>
+              </g>
+              <rect x="80" y="314" width="140" height="30" rx="3" fill="#f3effd" stroke="#5b3fc9" stroke-width="2.5"/>
+              <polyline points="80,344 103,314 126,344 150,314 174,344 197,314 220,344" fill="none" stroke="#5b3fc9" stroke-width="2"/>
+              <rect x="30" y="364" width="240" height="44" rx="6" fill="#e9f2f1" stroke="#1f5c58" stroke-width="2.5"/>
+              <rect x="80" y="364" width="140" height="10" fill="#1f5c58" opacity=".25"/>
+            </svg>
+          </div>
+          <div class="s-cards">
+            <div class="mcard" style="--m:#5b3fc9;--mt:#f3effd">
+              <div class="mh"><span class="pill">Prusa</span><span class="mt">3D printer</span></div>
+              <p class="mw">Truss foundation, spire cap and window detailing.</p>
+              <dl><dt>Material</dt><dd>PLA, about 250 g</dd><dt>Machine time</dt><dd>~12 h, run overnight</dd></dl>
+            </div>
+            <div class="mcard" style="--m:#c4501c;--mt:#fff1e8">
+              <div class="mh"><span class="pill">Epilog</span><span class="mt">Laser cutter</span></div>
+              <p class="mw">Four tapered plywood walls with window cutouts, plus frosted acrylic windows behind them.</p>
+              <dl><dt>Material</dt><dd>&#8539;&Prime; Baltic birch, &#8539;&Prime; frosted acrylic</dd><dt>Machine time</dt><dd>~2 h</dd></dl>
+            </div>
+            <div class="mcard" style="--m:#1f5c58;--mt:#e9f2f1">
+              <div class="mh"><span class="pill">Carvey</span><span class="mt">CNC mill</span></div>
+              <p class="mw">8&times;8 in site base: street, sidewalk and a slot the model sits in.</p>
+              <dl><dt>Material</dt><dd>&frac34;&Prime; Baltic birch</dd><dt>Machine time</dt><dd>~1.5 h</dd></dl>
+            </div>
+          </div>
+          <div class="s-strip">
+            <div><b>How it fits:</b> the printed foundation keys into the carved slot, the walls glue onto the foundation, acrylic sits behind the window cutouts, and an LED puck light sits in the hollow core.</div>
+            <div><b>Extra tools:</b> none &mdash; just glue, clamps and sandpaper.</div>
+          </div>
+        </div></div>
+
+        <!-- Slide 3: time plan + budget -->
+        <div class="slide-frame"><div class="slide s-plan">
+          <div class="s-head">
+            <div class="eyebrow"><span class="pill">03 &middot; Time plan &amp; budget</span></div>
+            <h3 class="s-h2">Nov 10 &rarr; Dec 3, <span class="accent">about 30 hours</span></h3>
+          </div>
+          <div class="gantt">
+            <div class="g-row g-head"><span></span><span>Wk 1<br><small>Nov 10&ndash;15</small></span><span>Wk 2<br><small>Nov 16&ndash;22</small></span><span>Wk 3<br><small>Nov 23&ndash;29 &middot; Thanksgiving</small></span><span>Wk 4<br><small>Nov 30&ndash;Dec 3</small></span><span>Hours</span></div>
+            <div class="g-row"><span>Scale &amp; split the CAD model</span><i style="--a:1;--b:2;--m:#3b3a37"></i><span class="h">6</span></div>
+            <div class="g-row"><span>Test cuts &amp; test print</span><i style="--a:1;--b:2;--m:#3b3a37"></i><span class="h">3</span></div>
+            <div class="g-row"><span>Laser-cut walls + acrylic</span><i style="--a:2;--b:3;--m:#c4501c"></i><span class="h">4</span></div>
+            <div class="g-row"><span>3D-print foundation &amp; details</span><i style="--a:2;--b:3;--m:#5b3fc9"></i><span class="h">2 <small>+12 machine</small></span></div>
+            <div class="g-row"><span>Carve the base</span><i style="--a:2;--b:3;--m:#1f5c58"></i><span class="h">3</span></div>
+            <div class="g-row"><span>Assemble &amp; fit the light</span><i style="--a:3;--b:4;--m:#3b3a37"></i><span class="h">6</span></div>
+            <div class="g-row"><span>Buffer: fixes &amp; reprints</span><i style="--a:3;--b:5;--m:#a8a49c"></i><span class="h">3</span></div>
+            <div class="g-row"><span>Photos &amp; eFolio write-up</span><i style="--a:4;--b:5;--m:#3b3a37"></i><span class="h">3</span></div>
+            <p class="g-note">Machine work happens in class sessions before Thanksgiving week; about 6&ndash;8 h a week outside class; long prints run overnight.</p>
+          </div>
+          <div class="budget">
+            <div class="k">Expected budget <small>(retail)</small></div>
+            <table>
+              <tr><td>&#8539;&Prime; Baltic birch, 12&times;24 <small>3 sheets &times; $7.94</small></td><td>$23.82</td></tr>
+              <tr><td>&#8539;&Prime; frosted cast acrylic, 12&times;24 <small>1 sheet</small></td><td>$24.79</td></tr>
+              <tr><td>Prusament PLA <small>~250 g of a $28.79 kg spool</small></td><td>$7.20</td></tr>
+              <tr><td>&frac34;&Prime; Baltic birch base, 8&times;8 in <small>share of a $52.99 sheet</small></td><td>$3.77</td></tr>
+              <tr><td>USB LED puck lights <small>3-pack</small></td><td>$10.98</td></tr>
+              <tr><td>Wood glue + CA glue <small>estimate</small></td><td>$8.00</td></tr>
+              <tr class="tot"><td>Total</td><td>$78.56</td></tr>
+            </table>
+          </div>
+        </div></div>
+
+        <div class="present-ui" aria-hidden="true">
+          <button type="button" data-act="prev" aria-label="Previous slide">&larr;</button>
+          <span class="count">1 / 4</span>
+          <button type="button" data-act="next" aria-label="Next slide">&rarr;</button>
+          <button type="button" data-act="exit" class="exit">Exit <small>Esc</small></button>
+        </div>
+      </section>
+
+      <p class="img-caption" style="margin-top:20px">Photos on the slides are reference images collected for inspiration. The Bummer &amp; Lazarus engraving is from the 1860s and in the public domain.</p>
       <footer>&copy; Digital Notebook &mdash; Gus &mdash; 2026</footer>
     </div>
 
@@ -1194,7 +1432,7 @@ var BC = {
   about:{p:[['Home','home']]},
   contact:{p:[['Home','home']]}
 };
-var PROJ = {"p1": {"n": "01", "t": "Design Notebook", "c": "var(--ochre)", "deep": "#9a6a00", "tint": "#fdf5e2", "img": "images/P1_notebook_cover.jpg"}, "p2": {"n": "02", "t": "Acrylic LED Sign", "c": "var(--teal)", "deep": "#1f5c58", "tint": "#e9f2f1", "img": "images/P2_v3_lit.jpg"}, "p3": {"n": "03", "t": "2D to 3D", "c": "var(--peach)", "deep": "#c4501c", "tint": "#fff1e8", "img": "images/P3_front.jpg"}, "p4": {"n": "04", "t": "Phone Stand", "c": "var(--lavender)", "deep": "#5b3fc9", "tint": "#f3effd", "img": "images/P4_charging.jpg"}, "p5": {"n": "05", "t": "Name Plate", "c": "var(--pink)", "deep": "#cc1f5f", "tint": "#ffeef4", "img": null}, "p6": {"n": "06", "t": "Final Project", "c": "var(--mint)", "deep": "#2a7a64", "tint": "#ebf6f2", "img": null}};
+var PROJ = {"p1": {"n": "01", "t": "Design Notebook", "c": "var(--ochre)", "deep": "#9a6a00", "tint": "#fdf5e2", "img": "images/P1_notebook_cover.jpg"}, "p2": {"n": "02", "t": "Acrylic LED Sign", "c": "var(--teal)", "deep": "#1f5c58", "tint": "#e9f2f1", "img": "images/P2_v3_lit.jpg"}, "p3": {"n": "03", "t": "2D to 3D", "c": "var(--peach)", "deep": "#c4501c", "tint": "#fff1e8", "img": "images/P3_front.jpg"}, "p4": {"n": "04", "t": "Phone Stand", "c": "var(--lavender)", "deep": "#5b3fc9", "tint": "#f3effd", "img": "images/P4_charging.jpg"}, "p5": {"n": "05", "t": "Name Plate", "c": "var(--pink)", "deep": "#cc1f5f", "tint": "#ffeef4", "img": null}, "p6": {"n": "06", "t": "Final Project", "c": "var(--mint)", "deep": "#2a7a64", "tint": "#ebf6f2", "img": "images/P6_street.jpg"}};
 var ORDER = ['p1','p2','p3','p4','p5','p6'];
 
 // ── Routing: every page has its own #address, so Back works and links can be shared ──
@@ -1226,6 +1464,8 @@ function render(id) {
   document.title = (id === 'home' || !title ? '' : title.childNodes[0].textContent.split('—')[0].trim() + ' — ') + 'Digital Notebook — Gus';
   closeRail();
   requestAnimationFrame(function () { revealCheck(); tocUpdate(); });
+  if (id === 'p6' && window.loadModelViewer) { window.loadModelViewer(); }
+  if (window.deckExit && id !== 'p6' && document.querySelector('.deck.presenting')) window.deckExit();
 }
 window.addEventListener('hashchange', function () { render(location.hash.slice(1) || 'home'); });
 
@@ -1321,6 +1561,66 @@ var revealCheck = function () {};
   };
   window.addEventListener('scroll', function () { if (!queued) { queued = true; requestAnimationFrame(revealCheck); } }, { passive: true });
   window.addEventListener('resize', function () { requestAnimationFrame(revealCheck); });
+})();
+
+// ── Pitch deck: scale slides, present mode, lazy 3D viewer ─────────
+(function () {
+  var deck = document.getElementById('deck');
+  if (!deck) return;
+  var frames = Array.prototype.slice.call(deck.querySelectorAll('.slide-frame'));
+  var count = deck.querySelector('.present-ui .count');
+  var cur = 0;
+
+  function fit() { frames.forEach(function (f) { f.firstElementChild.style.setProperty('--z', (f.clientWidth / 1600) || 0.5); }); }
+  if ('ResizeObserver' in window) { var ro = new ResizeObserver(fit); frames.forEach(function (f) { ro.observe(f); }); }
+  window.addEventListener('resize', fit);
+
+  function go(i) {
+    cur = Math.max(0, Math.min(frames.length - 1, i));
+    frames.forEach(function (f, j) { f.classList.toggle('cur', j === cur); });
+    count.textContent = (cur + 1) + ' / ' + frames.length;
+    fit();
+  }
+  function present(i) {
+    deck.classList.add('presenting'); document.body.classList.add('no-scroll');
+    go(i || 0);
+    if (deck.requestFullscreen) deck.requestFullscreen().catch(function () {});
+  }
+  function exit() {
+    deck.classList.remove('presenting'); document.body.classList.remove('no-scroll');
+    frames.forEach(function (f) { f.classList.remove('cur'); });
+    if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
+    requestAnimationFrame(fit);
+  }
+  window.deckPresent = present; window.deckExit = exit;
+  document.getElementById('present-btn').addEventListener('click', function () { present(0); });
+  frames.forEach(function (f, i) { f.addEventListener('dblclick', function () { if (!deck.classList.contains('presenting')) present(i); }); });
+  deck.querySelector('.present-ui').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    var a = b.dataset.act; if (a === 'prev') go(cur - 1); else if (a === 'next') go(cur + 1); else exit();
+  });
+  deck.addEventListener('click', function (e) {
+    if (!deck.classList.contains('presenting') || e.target.closest('model-viewer, .present-ui')) return;
+    go(e.clientX > window.innerWidth / 2 ? cur + 1 : cur - 1);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!deck.classList.contains('presenting')) return;
+    if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'].indexOf(e.key) > -1) { e.preventDefault(); go(cur + 1); }
+    else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].indexOf(e.key) > -1) { e.preventDefault(); go(cur - 1); }
+    else if (e.key === 'Home') go(0); else if (e.key === 'End') go(frames.length - 1);
+    else if (e.key === 'Escape') exit();
+  });
+  document.addEventListener('fullscreenchange', function () { if (!document.fullscreenElement && deck.classList.contains('presenting')) exit(); });
+
+  // load the 3D viewer only when the Final Project page is opened
+  var loaded = false;
+  window.loadModelViewer = function () {
+    if (loaded) return; loaded = true;
+    var s = document.createElement('script'); s.type = 'module'; s.src = 'vendor/model-viewer-3.5.0.min.js';
+    document.head.appendChild(s);
+    deck.querySelectorAll('model-viewer[data-src]').forEach(function (mv) { mv.setAttribute('src', mv.dataset.src); });
+  };
+  fit();
 })();
 
 // ── Lightbox ─────────────────────────────────────────────────────
